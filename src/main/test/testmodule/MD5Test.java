@@ -30,6 +30,7 @@ public class MD5Test {
 //TODO: Test goes here...
     System.out.println(MD5.GetMD5("testMD5"));
     System.out.println(MD5.GetMD5("testMD5"));
+    System.out.println(MD5.GetMD5("12345678"));
   }
 
 

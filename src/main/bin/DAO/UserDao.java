@@ -2,6 +2,7 @@ package DAO;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import model.Users;
 import DBUtil.*;
@@ -49,24 +50,49 @@ public class UserDao {
   }
 
   public static Users UserLogin(String username, String password) {
+    Connection connection = SQLConnect.getConnection();//打开数据库连接
     Users user = new Users();
     PreparedStatement pstmt = null;
-    int flag = 0;
-    String searchUserSQL = "SELECT * FROM Users WHERE username=? AND password=?";
+    //int flag = 0;
+    ResultSet resault = null;
+    String searchUserSQL = "SELECT * FROM users WHERE username= ? AND password= ? ";
     try {
+      pstmt = connection.prepareStatement(searchUserSQL);
       pstmt.setString(1, username);
       pstmt.setString(2, MD5.GetMD5(password));
-      flag = pstmt.executeUpdate();
+      resault = pstmt.executeQuery();
+      if (resault != null) {
+        System.out.println("登陆成功");
+        while (resault.next()) {
+          user.setUsername(resault.getString("username"));
+          user.setRealname(resault.getString("realname"));
+          user.setSex(resault.getString("sex"));
+          user.setDept(resault.getString("dept"));
+          user.setSchoolname(resault.getString("school"));
+          user.setPhonenum(resault.getString("phonenum"));
+        }
+      } else {
+        System.out.println("登陆失败");
+        user = null;
+      }
     } catch (SQLException throwables) {
       throwables.printStackTrace();
     } finally {
-      if (flag == 1) {
-        System.out.println("登陆成功");
-      } else {
-
+      if (pstmt != null) {
+        try {
+          pstmt.close();
+        } catch (SQLException e) {
+          e.printStackTrace();
+        }
+      }
+      if (connection != null) {
+        try {
+          connection.close();
+        } catch (SQLException e) {
+          e.printStackTrace();
+        }
       }
     }
-
     return user;
   }
 }
