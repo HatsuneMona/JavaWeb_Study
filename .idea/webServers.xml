@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="07bcd23d-0886-4d70-a757-471460dea149" name="呼和浩特" url="https://javaweb.moeneko.top">
+        <fileTransfer rootFolder="/www/wwwroot/javaweb.moeneko.top" accessType="SFTP" host="39.104.206.207" port="22" sshConfigId="868893e4-cd92-42af-9ca5-f961c3db7886" sshConfig="root@39.104.206.207:22 key" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
