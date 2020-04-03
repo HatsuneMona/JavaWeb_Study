@@ -26,7 +26,7 @@
     <h3>学生注册</h3>
 </div>
 <div class="regmain container"> <!--后者居中-->
-    <form action="/JavaWeb/StudentReg" method="post">
+    <form action="/StudentReg" method="post">
         <table class="table table-bordered">
             <tr>
                 <td class="bg-primary text-center" style="max-width: 150px;">用户名：</td>

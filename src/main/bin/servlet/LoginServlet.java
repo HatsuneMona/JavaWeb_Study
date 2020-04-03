@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Created by Hatsune Mona on 2020/4/3. 初音萌奈什喵的最可爱了喵！
  */
-@WebServlet(name = "LoginServlet")
+@WebServlet("/LoginServlet")
 public class LoginServlet extends HttpServlet {
 
   protected void doPost(HttpServletRequest request,

@@ -26,9 +26,8 @@ public class StudentReg extends javax.servlet.http.HttpServlet {
     user.setSchoolname(request.getParameter("school"));
     user.setDept(request.getParameter("dept"));
 
-    UserDao userDao = new UserDao();
-    userDao.insertUser(user);
-    System.out.println("注册成功");
+    UserDao.insertUser(user);
+
   }
 
   protected void doGet(javax.servlet.http.HttpServletRequest request,

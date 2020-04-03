@@ -12,7 +12,7 @@
 </head>
 <body>
 <div>
-    <form>
+    <form action="/LoginServlet" method="post">
         <table>
             <tr>
                 <td>用户名：</td>
