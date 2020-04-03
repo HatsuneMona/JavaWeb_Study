@@ -1,5 +1,7 @@
 package model;
 
+import module.MD5;
+
 /**
  * Created by Hatsune Mona on 2020/3/27. 初音萌奈什喵的最可爱了喵！
  */
@@ -36,7 +38,7 @@ public class Users {
     this.username = username;
     this.realname = realname;
     this.sex = sex;
-    this.userpsw = userpsw;
+    this.userpsw = MD5.GetMD5(userpsw);
     this.schoolname = schoolname;
     this.phonenum = phonenum;
     this.dept = dept;

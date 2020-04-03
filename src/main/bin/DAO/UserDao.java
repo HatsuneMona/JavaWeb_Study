@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import model.Users;
 import DBUtil.*;
+import module.MD5;
 
 /**
  * Created by Hatsune Mona on 2020/3/27. 初音萌奈什喵的最可爱了喵！
@@ -49,6 +50,22 @@ public class UserDao {
 
   public static Users UserLogin(String username, String password) {
     Users user = new Users();
+    PreparedStatement pstmt = null;
+    int flag = 0;
+    String searchUserSQL = "SELECT * FROM Users WHERE username=? AND password=?";
+    try {
+      pstmt.setString(1, username);
+      pstmt.setString(2, MD5.GetMD5(password));
+      flag = pstmt.executeUpdate();
+    } catch (SQLException throwables) {
+      throwables.printStackTrace();
+    } finally {
+      if (flag == 1) {
+        System.out.println("登陆成功");
+      } else {
+
+      }
+    }
 
     return user;
   }
