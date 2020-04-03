@@ -11,6 +11,7 @@ public class Users {
   private String userpsw;
   private String schoolname;
   private String phonenum;
+  private String dept;
 
   /**
    *
@@ -26,10 +27,10 @@ public class Users {
    * @param userpsw 密码
    * @param schoolname 学校名称
    * @param phonenum 手机
+   * @param dept 系部
    */
   public Users(String username, String realname, String sex, String userpsw,
-      String schoolname,
-      String phonenum) {
+      String schoolname, String dept, String phonenum) {
     super();
 
     this.username = username;
@@ -38,6 +39,7 @@ public class Users {
     this.userpsw = userpsw;
     this.schoolname = schoolname;
     this.phonenum = phonenum;
+    this.dept = dept;
   }
 
   /**
@@ -124,6 +126,22 @@ public class Users {
     this.phonenum = mobile;
   }
 
+
+  /**
+   * @return the dept
+   */
+  public String getDept() {
+    return dept;
+  }
+
+  /**
+   * @param dept the dept to set
+   */
+  public void setDept(String dept) {
+    this.dept = dept;
+  }
+
+
   @Override
   public int hashCode() {
     final int prime = 31;
@@ -134,6 +152,7 @@ public class Users {
     result = prime * result + ((sex == null) ? 0 : sex.hashCode());
     result = prime * result + ((username == null) ? 0 : username.hashCode());
     result = prime * result + ((userpsw == null) ? 0 : userpsw.hashCode());
+    result = prime * result + ((dept == null) ? 0 : dept.hashCode());
     return result;
   }
 
@@ -189,6 +208,13 @@ public class Users {
         return false;
       }
     } else if (!userpsw.equals(other.userpsw)) {
+      return false;
+    }
+    if (dept == null) {
+      if (other.dept != null) {
+        return false;
+      }
+    } else if (!dept.equals(other.dept)) {
       return false;
     }
     return true;
