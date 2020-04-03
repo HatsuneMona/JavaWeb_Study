@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-cn">
 <head>
     <meta charset="UTF-8">
     <title>学生注册</title>
-    <link rel="icon" href="../../img/aaa.png" type="image/x-iron">
+<!--    <link rel="icon" href="" type="image/x-iron">-->
     <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -16,7 +16,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
             integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
             crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../../css/stureg.css" type="text/css">
+    <link rel="stylesheet" href="resources/css/stureg.css" type="text/css">
 
 </head>
 <body>
@@ -24,7 +24,7 @@
     <h3>学生注册</h3>
 </div>
 <div class="regmain container"> <!--后者居中-->
-    <form action="index.html" method="post">
+    <form action="/JavaWeb/StudentReg" method="post">
         <table class="table table-bordered">
             <tr>
                 <td class="bg-primary text-center" style="max-width: 150px;">用户名：</td>
@@ -60,6 +60,12 @@
                 </td>
             </tr>
             <tr>
+                <td class="bg-primary text-center">学号：</td>
+                <td><input type="text" onblur="checkDept()"
+                           id="dept" name="dept"
+                           class="form-control" placeholder="请输入学号（系部）"></td>
+            </tr>
+            <tr>
                 <td class="bg-primary text-center">真实姓名：</td>
                 <td><input type="text" onblur="checkRealname()"
                            id="realname" name="realname"
@@ -80,7 +86,7 @@
             <tr>
                 <td class="bg-primary text-center">学校：</td>
                 <td>
-                    <select class="form-control" id="school">
+                    <select class="form-control" id="school" name="school">
                         <option>太原工业学院</option>
                         <option>其他</option>
                     </select>
@@ -96,6 +102,6 @@
     </form>
 </div>
 
-<script src="../../../../../../HTML/大三：JAVAWEB/js/stureg.js"></script>
+<script src="resources/js/stureg.js"></script>
 </body>
 </html>

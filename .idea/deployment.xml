@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" serverName="39.104.206.207">
+  <component name="PublishConfigData" serverName="呼和浩特 aliyun">
     <serverData>
-      <paths name="39.104.206.207">
+      <paths name="呼和浩特 aliyun">
         <serverdata>
           <mappings>
-            <mapping deploy="/www/wwwroot/javaweb.moeneko.top/" local="$PROJECT_DIR$" web="/www/wwwroot/javaweb.moeneko.top/" />
+            <mapping deploy="/" local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>

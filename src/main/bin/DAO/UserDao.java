@@ -14,7 +14,7 @@ public class UserDao {
     Connection connection = SQLConnect.getConnection();//打开数据库连接
     PreparedStatement pstmt = null;
     int flag = 0;
-    String insertUserSQL = "INSERT INTO Users VALUES(?,?,?,?,?,?)";
+    String insertUserSQL = "INSERT INTO Users VALUES(?,?,?,?,?,?,?)";
     try {
       pstmt = connection.prepareStatement(insertUserSQL);
       pstmt.setString(1,user.getUsername());
@@ -23,6 +23,7 @@ public class UserDao {
       pstmt.setString(4,user.getRealname());
       pstmt.setString(5,user.getUserpsw());
       pstmt.setString(6,user.getSchoolname());
+      pstmt.setString(7,user.getDept());
       flag = pstmt.executeUpdate();
     } catch (SQLException e) {
       e.printStackTrace();
