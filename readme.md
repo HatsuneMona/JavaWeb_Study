@@ -1,5 +1,11 @@
 # JavaWeb学习仓库
 ------
-原地址：gitee.com
+使用Gitee的网页版的提交（上传）工具，每小时只能提交20个文件，且不便于文件目录的安排
 
-为了方便上传将库移到Github
+故将我自己的项目整体转移到github的仓库中，便于上传维护。
+
+仓库及项目连接：
+
+[github仓库地址（主要）](https://github.com/HatsuneMona/JavaWeb_Study)  |  [Gitee仓库地址（镜像）](https://gitee.com/HatsuneMona/JavaWeb_Study)  |  [javaweb项目部署网址（成品）](https://javaweb.moeneko.top)
+
+在gitee的 [tit2017cs仓库](https://gitee.com/ychs168/tit2017cs) 中我会更新项目 ~~进度~~ 版本号。
