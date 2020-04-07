@@ -11,6 +11,28 @@
     <title>登陆界面</title>
 </head>
 <body>
-
+<div>
+    <form action="/LoginServlet" method="post">
+        <table>
+            <tr>
+                <td>用户名：</td>
+                <td>
+                    <label><input type="text" id="username" name="username"> </label>
+                </td>
+            </tr>
+            <tr>
+                <td>密码：</td>
+                <td>
+                    <label><input type="password" id="password" name="password"> </label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label><input type="submit"></label>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
 </body>
 </html>

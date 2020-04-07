@@ -1,11 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" serverName="呼和浩特 aliyun">
+  <component name="PublishConfigData" serverName="呼和浩特">
     <serverData>
-      <paths name="呼和浩特 aliyun">
+      <paths name="北京">
         <serverdata>
           <mappings>
             <mapping deploy="/" local="$PROJECT_DIR$" web="/" />
+            <mapping deploy="/test" local="$PROJECT_DIR$/src/test" web="/" />
+            <mapping deploy="/main" local="$PROJECT_DIR$/src/main" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="呼和浩特">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/" local="$PROJECT_DIR$" web="/" />
+            <mapping deploy="/test" local="$PROJECT_DIR$/src/test" web="/" />
+            <mapping deploy="/main" local="$PROJECT_DIR$/src/main" web="/" />
           </mappings>
         </serverdata>
       </paths>
