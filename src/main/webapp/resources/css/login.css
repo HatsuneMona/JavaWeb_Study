@@ -1,0 +1,20 @@
+.main_div {
+  width: 70%;
+
+}
+
+.left_div {
+  width: 100px;
+}
+
+.left_div img {
+  width: 100%;
+}
+
+.right_div {
+  width: 49%;
+}
+
+.input_table tr {
+  height: 80px;
+}
