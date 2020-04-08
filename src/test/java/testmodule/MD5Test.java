@@ -1,16 +1,16 @@
 package testmodule;
 
 import module.MD5;
-import org.junit.Test;
-import org.junit.Before;
 import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 
 /**
  * MD5 Tester.
  *
  * @author <Authors name>
  * @version 1.0
- * @since <pre>4ÔÂ 3, 2020</pre>
+ * @since <pre>4ï¿½ï¿½ 3, 2020</pre>
  */
 public class MD5Test {
 

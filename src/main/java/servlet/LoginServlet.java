@@ -13,7 +13,7 @@ import model.Users;
 /**
  * Created by Hatsune Mona on 2020/4/3. 初音萌奈什喵的最可爱了喵！
  */
-@WebServlet("/LoginServlet")
+@WebServlet(name="登录验证",value = "/LoginServlet")
 public class LoginServlet extends HttpServlet {
 
   protected void doPost(HttpServletRequest request,
@@ -22,8 +22,8 @@ public class LoginServlet extends HttpServlet {
     response.setHeader("content-type", "text/html;charset=UTF-8");
     response.setCharacterEncoding("UTF-8");
     request.setCharacterEncoding("UTF-8");
-    String username = request.getParameter("username");
-    String password = request.getParameter("password");
+    String username = request.getParameter("logname");
+    String password = request.getParameter("logpass");
     Users user = null;
     user = UserDao.UserLogin(username, password);
     PrintWriter out = response.getWriter();

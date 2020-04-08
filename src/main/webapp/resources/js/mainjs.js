@@ -7,7 +7,7 @@ function showmain() {
 }
 
 function showlogin() {
-  document.getElementById("main_iframe").src = "./login.jsp";
+  document.getElementById("main_iframe").src = "./login.html";
 }
 
 function showReg() {
