@@ -1,0 +1,24 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="JavaWeb.main:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/JavaWeb_main_war_exploded</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="JavaWeb.main" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Gradle: mysql:mysql-connector-java:5.1.6" />
+          <element id="library" level="project" name="Gradle: org.eclipse.jetty:jetty-webapp:9.4.27.v20200227" />
+          <element id="library" level="project" name="Gradle: org.eclipse.jetty:jetty-servlet:9.4.27.v20200227" />
+          <element id="library" level="project" name="Gradle: org.eclipse.jetty:jetty-xml:9.4.27.v20200227" />
+          <element id="library" level="project" name="Gradle: org.eclipse.jetty:jetty-security:9.4.27.v20200227" />
+          <element id="library" level="project" name="Gradle: org.eclipse.jetty:jetty-util:9.4.27.v20200227" />
+          <element id="library" level="project" name="Gradle: org.eclipse.jetty:jetty-server:9.4.27.v20200227" />
+          <element id="library" level="project" name="Gradle: org.eclipse.jetty:jetty-http:9.4.27.v20200227" />
+          <element id="library" level="project" name="Gradle: org.eclipse.jetty:jetty-io:9.4.27.v20200227" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="JavaWeb.main/web/Web Gradle : JavaWeb-0.1.0.war" />
+    </root>
+  </artifact>
+</component>

@@ -1,4 +1,5 @@
-package module;/**
+package module;
+/**
  * Created by Hatsune Mona on 2020/4/3. 初音萌奈什喵的最可爱了喵！
  */
 
@@ -12,9 +13,9 @@ import java.security.NoSuchAlgorithmException;
  * @create: 2020-04-03 16:58
  **/
 public class MD5 {
-
+  
   public static String GetMD5(String string) {
-
+    
     MessageDigest md;
     try {
       md = MessageDigest.getInstance("MD5");//利用哈希算法，MD5
@@ -29,12 +30,12 @@ public class MD5 {
     } catch (NoSuchAlgorithmException e) {
       System.out.println("密码加密失败");
       return "";
-
+      
     }
   }
-
+  
   private final static char[] HEX = "0123456789abcdef".toCharArray();
-
+  
   /**
    * 将字节数组转成 16 进制的字符串来表示，每个字节采用两个字符表表示
    *
