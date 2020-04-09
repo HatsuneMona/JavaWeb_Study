@@ -17,7 +17,7 @@ import javax.persistence.Table;
  * @create: 2020-04-09 16:30
  **/
 @Entity
-@Table(name = "electivelist", schema = "javaweb", catalog = "")
+@Table(name = "electivelist", schema = "javaweb")
 @IdClass(ElectivelistEntityPK.class)
 public class ElectivelistEntity {
   

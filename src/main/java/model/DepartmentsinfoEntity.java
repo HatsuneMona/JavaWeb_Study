@@ -16,12 +16,12 @@ import javax.persistence.Table;
  * @create: 2020-04-09 16:30
  **/
 @Entity
-@Table(name = "departmentsinfo", schema = "javaweb", catalog = "")
+@Table(name = "departmentsinfo", schema = "javaweb")
 public class DepartmentsinfoEntity {
   
   private int departmentNo;
   private String departmentName;
-  private String departmentHead;
+  private int departmentHead;
   
   @Id
   @Column(name = "departmentNo")
@@ -45,11 +45,11 @@ public class DepartmentsinfoEntity {
   
   @Basic
   @Column(name = "departmentHead")
-  public String getDepartmentHead() {
+  public int getDepartmentHead() {
     return departmentHead;
   }
   
-  public void setDepartmentHead(String departmentHead) {
+  public void setDepartmentHead(int departmentHead) {
     this.departmentHead = departmentHead;
   }
   

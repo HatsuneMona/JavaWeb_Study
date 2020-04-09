@@ -16,7 +16,7 @@ import javax.persistence.Table;
  * @create: 2020-04-09 16:30
  **/
 @Entity
-@Table(name = "studentsinfo", schema = "javaweb", catalog = "")
+@Table(name = "studentsinfo", schema = "javaweb")
 public class StudentsinfoEntity {
   
   private int studentNo;
