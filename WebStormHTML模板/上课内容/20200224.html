@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>萌奈什喵的最可爱了喵！</title>
+</head>
+<body>
+<div>
+    <h1>注册界面</h1>
+    <p>172054213 - 宋海禹</p>
+    <p>2020.02.24 第一次课堂</p>
+</div>
+<div>
+    <form action="/上课内容/Success.html" id="reg_form" method="get">
+        <table>
+            <tr>
+                <td width="130.15">用户名：</td>
+                <td colspan="2"><input type="text" name="user" ></td>
+            </tr>
+            <tr>
+                <td>密码：</td>
+                <td colspan="2"><input type="password" name="pwd"></td>
+            </tr>
+            <tr>
+                <td>邮箱：</td>
+                <td><input type="text" name="email"></td>
+                <td>@<select name="email_server", form="reg_form">
+                    <option value ="gmail.com">gmail.com</option>
+                    <option value ="qq.com">qq.com</option>
+                    <option value="163.com">163.com</option>
+                    <option value="foxmail.com">foxmail.com</option>
+                </select></td>
+            </tr>
+        </table>
+        <br>
+        <table>
+            <tr>
+                <td>性别：</td>
+                <td><input type="radio" name="sex" value="male">男</td>
+                <td><input type="radio" name="sex" value="female">女</td>
+                <td><input type="radio" name="sex" value="Other">其他</td>
+            </tr>
+            <tr>
+                <td rowspan="3" >喜欢的编程语言：</td>
+                <td><input type="checkbox" name="language" value="C">C</td>
+                <td><input type="checkbox" name="language" value="C++">C++</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="language" value="Golang">GoLang</td>
+                <td><input type="checkbox" name="language" value="Python">Python</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="language" value="JAVA">JAVA</td>
+                <td><input type="checkbox" name="language" value="CSharp">C#</td>
+            </tr>
+            <tr>
+                <td>&nbsp</td>
+                <td><input type="submit" name="go" value="注册"></td>
+            </tr>
+        </table>
+    </form>
+    </div>
+</body>
+</html>
