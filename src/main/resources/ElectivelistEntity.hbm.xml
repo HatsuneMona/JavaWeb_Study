@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+  <class name="model.ElectivelistEntity" table="electivelist" schema="javaweb">
+    <composite-id mapped="true" class="model.ElectivelistEntityPK">
+      <key-property name="studentNo" column="studentNo"/>
+      <key-property name="courseNo" column="courseNo"/>
+    </composite-id>
+    <property name="grade" column="grade"/>
+  </class>
+</hibernate-mapping>

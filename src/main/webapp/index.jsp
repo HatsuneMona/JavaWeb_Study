@@ -46,7 +46,7 @@
             </button>
           </li>
           <li>
-            <button type="button" class="btn btn-primary" onclick="showReg()">学生注册
+            <button type="button" class="btn btn-primary" onclick="showReg()">录入新教师
             </button>
           </li>
         </ul>

@@ -9,7 +9,7 @@
 <html lang="zh-cn">
 <head>
     <meta charset="UTF-8">
-    <title>学生注册</title>
+    <title>教师注册</title>
     <!--    <link rel="icon" href="" type="image/x-iron">-->
     <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
     <link rel="stylesheet"
@@ -30,7 +30,7 @@
 </head>
 <body>
 <div class="text-center">
-    <h3>学生注册</h3>
+    <h3>教师注册</h3>
 </div>
 <div class="regmain container"> <!--后者居中-->
     <form action="/StudentReg" method="post">
@@ -69,10 +69,10 @@
                 </td>
             </tr>
             <tr>
-                <td class="bg-primary text-center">学号：</td>
+                <td class="bg-primary text-center">系部：</td>
                 <td><input type="text" onblur="checkDept()"
                            id="dept" name="dept"
-                           class="form-control" placeholder="请输入学号（系部）"></td>
+                           class="form-control" placeholder="请输入系部"></td>
             </tr>
             <tr>
                 <td class="bg-primary text-center">真实姓名：</td>

@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD//EN"
+    "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="connection.url">jdbc:mysql://123.56.220.189:3306/javaweb</property>
+    <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+    <mapping resource="CourseinfoEntity.hbm.xml"/>
+    <mapping class="model.CourseinfoEntity"/>
+    <mapping class="model.DepartmentsinfoEntity"/>
+    <mapping resource="DepartmentsinfoEntity.hbm.xml"/>
+    <mapping class="model.ElectivelistEntity"/>
+    <mapping resource="ElectivelistEntity.hbm.xml"/>
+    <mapping resource="StudentsinfoEntity.hbm.xml"/>
+    <mapping class="model.StudentsinfoEntity"/>
+    <mapping class="model.TeachersinfoEntity"/>
+    <mapping resource="TeachersinfoEntity.hbm.xml"/>
+    <!-- <property name="connection.username"/> -->
+    <!-- <property name="connection.password"/> -->
+
+    <!-- DB schema will be updated if needed -->
+    <!-- <property name="hibernate.hbm2ddl.auto">update</property> -->
+  </session-factory>
+</hibernate-configuration>

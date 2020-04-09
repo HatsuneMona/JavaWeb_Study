@@ -8,8 +8,8 @@ import model.Users;
 /**
  * Created by Hatsune Mona on 2020/4/2. 初音萌奈什喵的最可爱了喵！
  */
-@WebServlet(name="注册",value = "/StudentReg")
-public class StudentReg extends javax.servlet.http.HttpServlet {
+@WebServlet(name="注册",value = "/TeacherReg")
+public class TeacherReg extends javax.servlet.http.HttpServlet {
 
   protected void doPost(javax.servlet.http.HttpServletRequest request,
       javax.servlet.http.HttpServletResponse response)
