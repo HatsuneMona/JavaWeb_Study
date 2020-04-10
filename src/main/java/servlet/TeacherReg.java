@@ -3,7 +3,7 @@ package servlet;
 import DAO.UserDao;
 import java.io.IOException;
 import javax.servlet.annotation.WebServlet;
-import model.Users;
+import model.UsersEntity;
 
 /**
  * Created by Hatsune Mona on 2020/4/2. 初音萌奈什喵的最可爱了喵！
@@ -15,7 +15,7 @@ public class TeacherReg extends javax.servlet.http.HttpServlet {
       javax.servlet.http.HttpServletResponse response)
       throws javax.servlet.ServletException, IOException {
 
-    Users user = new Users();
+    UsersEntity user = new UsersEntity();
     response.setCharacterEncoding("UTF-8");
     request.setCharacterEncoding("UTF-8");
     user.setUsername(request.getParameter("username"));

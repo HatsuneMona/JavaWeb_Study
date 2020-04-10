@@ -2,7 +2,7 @@ package testDAO;
 
 import DAO.UserDao;
 import java.util.Random;
-import model.Users;
+import model.UsersEntity;
 import org.junit.Test;
 import org.junit.Before;
 import org.junit.After;
@@ -16,7 +16,7 @@ import org.junit.After;
  */
 public class UserDaoTest {
 
-  Users testuser;
+  UsersEntity testuser;
 
   //length用户要求产生字符串的长度
   private String getRandomString(int length){
@@ -32,7 +32,7 @@ public class UserDaoTest {
 
   @Before
   public void before() throws Exception {
-    testuser = new Users(getRandomString(5), "随机用户", "male",
+    testuser = new UsersEntity(getRandomString(5), "随机用户", "male",
         "12345678", "喵喵工业学院", "12345678901",
         "12345678901");
   }
@@ -42,7 +42,7 @@ public class UserDaoTest {
   }
 
   /**
-   * Method: insertUser(Users user)
+   * Method: insertUser(UsersEntity user)
    */
   @Test
   public void testInsertUser() throws Exception {

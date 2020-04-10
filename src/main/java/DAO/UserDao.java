@@ -4,7 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import model.Users;
+import model.UsersEntity;
 import DBUtil.*;
 import module.MD5;
 
@@ -13,7 +13,7 @@ import module.MD5;
  */
 public class UserDao {
 
-  public static int insertUser(Users user) {
+  public static int insertUser(UsersEntity user) {
     Connection connection = SQLConnect.getConnection();//打开数据库连接
     PreparedStatement pstmt = null;
     int flag = 0;
@@ -49,9 +49,9 @@ public class UserDao {
     return flag;
   }
 
-  public static Users UserLogin(String username, String password) {
+  public static UsersEntity UserLogin(String username, String password) {
     Connection connection = SQLConnect.getConnection();//打开数据库连接
-    Users user = new Users();
+    UsersEntity user = new UsersEntity();
     PreparedStatement pstmt = null;
     //int flag = 0;
     ResultSet resault = null;

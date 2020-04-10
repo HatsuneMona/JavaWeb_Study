@@ -9,7 +9,7 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import model.Users;
+import model.UsersEntity;
 
 /**
  * Created by Hatsune Mona on 2020/4/3. 初音萌奈什喵的最可爱了喵！
@@ -24,7 +24,7 @@ public class LoginServlet extends HttpServlet {
     request.setCharacterEncoding("UTF-8");
     String username = request.getParameter("logname");
     String password = request.getParameter("logpass");
-    Users user = null;
+    UsersEntity user = null;
     user = UserDao.UserLogin(username, password);
     PrintWriter out = response.getWriter();
     if (user != null) {

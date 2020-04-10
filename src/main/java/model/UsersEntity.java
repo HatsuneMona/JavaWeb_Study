@@ -5,7 +5,7 @@ import module.MD5;
 /**
  * Created by Hatsune Mona on 2020/3/27. 初音萌奈什喵的最可爱了喵！
  */
-public class Users {
+public class UsersEntity {
 
   private String username;
   private String realname;
@@ -18,7 +18,7 @@ public class Users {
   /**
    *
    */
-  public Users() {
+  public UsersEntity() {
     super();
   }
 
@@ -31,7 +31,7 @@ public class Users {
    * @param phonenum 手机
    * @param dept 系部
    */
-  public Users(String username, String realname, String sex, String userpsw,
+  public UsersEntity(String username, String realname, String sex, String userpsw,
       String schoolname, String dept, String phonenum) {
     super();
 
@@ -169,7 +169,7 @@ public class Users {
     if (getClass() != obj.getClass()) {
       return false;
     }
-    Users other = (Users) obj;
+    UsersEntity other = (UsersEntity) obj;
     if (phonenum == null) {
       if (other.phonenum != null) {
         return false;
