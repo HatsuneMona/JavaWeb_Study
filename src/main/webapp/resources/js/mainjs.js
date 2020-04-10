@@ -11,5 +11,5 @@ function showlogin() {
 }
 
 function showReg() {
-  document.getElementById("main_iframe").src = "./teacherReg.jsp";
+  document.getElementById("main_iframe").src = "./userReg.jsp";
 }

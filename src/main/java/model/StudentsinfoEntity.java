@@ -1,5 +1,5 @@
 package model;/**
- * Created by Hatsune Mona on 2020/4/9. 初音萌奈什喵的最可爱了喵！
+ * Created by Hatsune Mona on 2020/4/10. 初音萌奈什喵的最可爱了喵！
  */
 
 import java.util.Objects;
@@ -13,7 +13,7 @@ import javax.persistence.Table;
  * @program: JavaWeb
  * @description:
  * @author: Created by Hatsune Mona. 初音萌奈什喵的最可爱了喵！
- * @create: 2020-04-09 16:30
+ * @create: 2020-04-10 21:57
  **/
 @Entity
 @Table(name = "studentsinfo", schema = "javaweb")
@@ -23,6 +23,7 @@ public class StudentsinfoEntity {
   private String studentName;
   private int studentAge;
   private boolean studentSex;
+  private int studentDepartment;
   
   @Id
   @Column(name = "studentNo")
@@ -64,6 +65,16 @@ public class StudentsinfoEntity {
     this.studentSex = studentSex;
   }
   
+  @Basic
+  @Column(name = "studentDepartment")
+  public int getStudentDepartment() {
+    return studentDepartment;
+  }
+  
+  public void setStudentDepartment(int studentDepartment) {
+    this.studentDepartment = studentDepartment;
+  }
+  
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -76,11 +87,12 @@ public class StudentsinfoEntity {
     return studentNo == that.studentNo &&
         studentAge == that.studentAge &&
         studentSex == that.studentSex &&
+        studentDepartment == that.studentDepartment &&
         Objects.equals(studentName, that.studentName);
   }
   
   @Override
   public int hashCode() {
-    return Objects.hash(studentNo, studentName, studentAge, studentSex);
+    return Objects.hash(studentNo, studentName, studentAge, studentSex, studentDepartment);
   }
 }

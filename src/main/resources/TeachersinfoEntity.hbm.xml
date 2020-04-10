@@ -9,5 +9,6 @@
     <property name="teacherName" column="teacherName"/>
     <property name="teacherAge" column="teacherAge"/>
     <property name="teacherSex" column="teacherSex"/>
+    <property name="teacherDepartment" column="teacherDepartment"/>
   </class>
 </hibernate-mapping>

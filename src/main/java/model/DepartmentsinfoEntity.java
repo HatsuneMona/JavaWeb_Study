@@ -1,5 +1,5 @@
 package model;/**
- * Created by Hatsune Mona on 2020/4/9. 初音萌奈什喵的最可爱了喵！
+ * Created by Hatsune Mona on 2020/4/10. 初音萌奈什喵的最可爱了喵！
  */
 
 import java.util.Objects;
@@ -13,7 +13,7 @@ import javax.persistence.Table;
  * @program: JavaWeb
  * @description:
  * @author: Created by Hatsune Mona. 初音萌奈什喵的最可爱了喵！
- * @create: 2020-04-09 16:30
+ * @create: 2020-04-10 21:57
  **/
 @Entity
 @Table(name = "departmentsinfo", schema = "javaweb")
@@ -63,8 +63,8 @@ public class DepartmentsinfoEntity {
     }
     DepartmentsinfoEntity that = (DepartmentsinfoEntity) o;
     return departmentNo == that.departmentNo &&
-        Objects.equals(departmentName, that.departmentName) &&
-        Objects.equals(departmentHead, that.departmentHead);
+        departmentHead == that.departmentHead &&
+        Objects.equals(departmentName, that.departmentName);
   }
   
   @Override

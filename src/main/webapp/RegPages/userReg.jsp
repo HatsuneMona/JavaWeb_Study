@@ -1,12 +1,21 @@
-<!DOCTYPE html>
+<%--
+  Created by IntelliJ IDEA.
+  model: HatsuneMona
+  Date: 2020/3/23
+  Time: 15:08
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html; charset=UTF-8" language="java" %>
 <html lang="zh-cn">
 <head>
   <meta charset="UTF-8">
-  <title>学生注册</title>
-  <link rel="icon" href="../resources/img/aaa.png" type="image/x-iron">
+  <title>教师注册</title>
+  <!--    <link rel="icon" href="" type="image/x-iron">-->
   <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
-        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.slim.min.js"
           integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
           crossorigin="anonymous"></script>
@@ -21,11 +30,10 @@
 </head>
 <body>
 <div class="text-center">
-  <h3>学生注册</h3>
+  <h3>教师注册</h3>
 </div>
 <div class="regmain container"> <!--后者居中-->
-  <!--  TODO 把这个action改到servlet上去-->
-  <form action="../index.html" method="post">
+  <form action="/StudentReg" method="post">
     <table class="table table-bordered">
       <tr>
         <td class="bg-primary text-center" style="max-width: 150px;">用户名：</td>
@@ -61,6 +69,12 @@
         </td>
       </tr>
       <tr>
+        <td class="bg-primary text-center">系部：</td>
+        <td><input type="text" onblur="checkDept()"
+                   id="dept" name="dept"
+                   class="form-control" placeholder="请输入系部"></td>
+      </tr>
+      <tr>
         <td class="bg-primary text-center">真实姓名：</td>
         <td><input type="text" onblur="checkRealname()"
                    id="realname" name="realname"
@@ -81,7 +95,7 @@
       <tr>
         <td class="bg-primary text-center">学校：</td>
         <td>
-          <select class="form-control" id="school">
+          <select class="form-control" id="school" name="school">
             <option>太原工业学院</option>
             <option>其他</option>
           </select>
@@ -97,6 +111,6 @@
   </form>
 </div>
 
-<script src="/resources/js/stureg.js"></script>
+<script src="../resources/js/userReg.js"></script>
 </body>
 </html>

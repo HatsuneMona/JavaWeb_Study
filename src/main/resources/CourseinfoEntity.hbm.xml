@@ -7,6 +7,8 @@
   <class name="model.CourseinfoEntity" table="courseinfo" schema="javaweb">
     <id name="courseNo" column="courseNo"/>
     <property name="courseName" column="courseName"/>
+    <property name="firstClass" column="firstClass"/>
     <property name="courseCredit" column="courseCredit"/>
+    <property name="teacher" column="teacher"/>
   </class>
 </hibernate-mapping>
