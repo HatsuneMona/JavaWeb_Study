@@ -2,7 +2,8 @@
 <html lang="zh-cn">
 <head>
   <meta charset="UTF-8">
-  <title>TeacerReg</title>
+  <title>学生注册</title>
+  <link rel="icon" href="../img/aaa.png" type="image/x-iron">
   <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
         integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -15,41 +16,29 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
           integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
           crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="css/stureg.css" type="text/css">
+  <link rel="stylesheet" href="../css/stureg.css" type="text/css">
 
 </head>
 <body>
 <div class="text-center">
-  <h3>教职工注册</h3>
+  <h3>学生注册</h3>
 </div>
 <div class="regmain container"> <!--后者居中-->
   <!--  TODO 把这个action改到servlet上去-->
-  <form action="index.html" method="post">
+  <form action="../index.html" method="post">
     <table class="table table-bordered">
       <tr>
-        <td class="bg-primary text-center" style="max-width: 150px;">教职工编号：</td>
-        <td><input type="text" id="teacherNo" name="teacherNo"
-                   class="form-control" onblur="checkTeacherNo()"
-                   placeholder="请输入教职工编号">
+        <td class="bg-primary text-center" style="max-width: 150px;">用户名：</td>
+        <td><input type="text" id="username" name="username"
+                   class="form-control" onblur="checkUsername()"
+                   placeholder="请输入用户名。以字母开头，字母与数字的组合，3-10字符">
         </td>
       </tr>
       <tr>
-        <td class="bg-primary text-center">教职工姓名：</td>
-        <td><input type="text" id="teacherName" name="teacherName"
-                   class="form-control" onblur="checkTeacherName()"
-                   placeholder="请输入教师姓名"></td>
-      </tr>
-      <tr>
-        <td class="bg-primary text-center">工龄：</td>
-        <td><input type="text" onblur="checkTeacherAge()"
-                   id="teacherAge" name="teacherAge"
-                   class="form-control" placeholder="请输入教师工龄"></td>
-      </tr>
-      <tr>
-        <td class="bg-primary text-center">任职系部：</td>
-        <td><input type="text" onblur="checkTeacherDept()"
-                   id="teacherDept" name="teacherDept"
-                   class="form-control" placeholder="请输入系部编号"></td>
+        <td class="bg-primary text-center">手机号：</td>
+        <td><input type="text" id="phonenum" name="phonenum"
+                   class="form-control" onblur="checkPhoneNum()"
+                   placeholder="请输入大陆手机号"></td>
       </tr>
       <tr>
         <td class="bg-primary text-center">性别：</td>
@@ -72,6 +61,33 @@
         </td>
       </tr>
       <tr>
+        <td class="bg-primary text-center">真实姓名：</td>
+        <td><input type="text" onblur="checkRealname()"
+                   id="realname" name="realname"
+                   class="form-control" placeholder="请输入真实姓名"></td>
+      </tr>
+      <tr>
+        <td class="bg-primary text-center">密码：</td>
+        <td><input type="password" onblur="checkPassword1()"
+                   id="password1" name="password1"
+                   class="form-control" placeholder="请输入密码，8-12位字母数字"></td>
+      </tr>
+      <tr>
+        <td class="bg-primary text-center">确认密码：</td>
+        <td><input type="password" onblur="checkPassword2()"
+                   id="password2" name="password2"
+                   class="form-control" placeholder="请再次输入密码"></td>
+      </tr>
+      <tr>
+        <td class="bg-primary text-center">学校：</td>
+        <td>
+          <select class="form-control" id="school">
+            <option>太原工业学院</option>
+            <option>其他</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
         <td colspan="2">
           <input type="submit" onclick="return checkAll()"
                  value="注册" class="btn btn-danger btn-block">
@@ -80,6 +96,7 @@
     </table>
   </form>
 </div>
-<script src="js/teacherreg.js"></script>
+
+<script src="/js/stureg.js"></script>
 </body>
 </html>
