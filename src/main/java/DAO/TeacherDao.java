@@ -17,7 +17,7 @@ import model.TeachersinfoEntity;
  **/
 public class TeacherDao {
   
-  static public int InsertCourse(TeachersinfoEntity teacherInfo) {
+  static public int InsertTeacher(TeachersinfoEntity teacherInfo) {
     Connection connection = SQLConnect.getConnection();//打开数据库连接
     PreparedStatement pstmt = null;
     String insertSQL = "INSERT INTO teachersinfo VALUES(?,?,?,?,?)";
