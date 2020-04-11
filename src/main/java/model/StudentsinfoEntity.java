@@ -22,7 +22,7 @@ public class StudentsinfoEntity {
   private int studentNo;
   private String studentName;
   private int studentAge;
-  private boolean studentSex;
+  private String studentSex;
   private int studentDepartment;
   
   @Id
@@ -57,11 +57,11 @@ public class StudentsinfoEntity {
   
   @Basic
   @Column(name = "studentSex")
-  public boolean isStudentSex() {
+  public String getStudentSex() {
     return studentSex;
   }
   
-  public void setStudentSex(boolean studentSex) {
+  public void setStudentSex(String studentSex) {
     this.studentSex = studentSex;
   }
   

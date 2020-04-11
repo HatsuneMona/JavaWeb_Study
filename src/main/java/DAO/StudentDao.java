@@ -27,7 +27,7 @@ public class StudentDao {
       pstmt.setInt(1, studentInfo.getStudentNo());
       pstmt.setString(2, studentInfo.getStudentName());
       pstmt.setInt(3, studentInfo.getStudentAge());
-      pstmt.setBoolean(4, studentInfo.isStudentSex());
+      pstmt.setString(4, studentInfo.getStudentSex());
       pstmt.setInt(5, studentInfo.getStudentDepartment());
       flag = pstmt.executeUpdate();
     } catch (SQLException e) {

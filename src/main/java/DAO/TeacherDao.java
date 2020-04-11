@@ -27,7 +27,7 @@ public class TeacherDao {
       pstmt.setInt(1, teacherInfo.getTeacherNo());
       pstmt.setString(2, teacherInfo.getTeacherName());
       pstmt.setInt(3, teacherInfo.getTeacherAge());
-      pstmt.setBoolean(4, teacherInfo.isTeacherSex());
+      pstmt.setString(4, teacherInfo.getTeacherSex());
       pstmt.setInt(5, teacherInfo.getTeacherDepartment());
       flag = pstmt.executeUpdate();
     } catch (SQLException e) {

@@ -22,7 +22,7 @@ public class TeachersinfoEntity {
   private int teacherNo;
   private String teacherName;
   private int teacherAge;
-  private boolean teacherSex;
+  private String teacherSex;
   private int teacherDepartment;
   
   @Id
@@ -57,11 +57,11 @@ public class TeachersinfoEntity {
   
   @Basic
   @Column(name = "teacherSex")
-  public boolean isTeacherSex() {
+  public String getTeacherSex() {
     return teacherSex;
   }
   
-  public void setTeacherSex(boolean teacherSex) {
+  public void setTeacherSex(String teacherSex) {
     this.teacherSex = teacherSex;
   }
   
