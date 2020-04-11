@@ -1,38 +1,36 @@
 package servlet;
 
-import DAO.UserDao;
 import java.io.IOException;
+import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import model.UsersEntity;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import model.TeachersinfoEntity;
 
 /**
- * Created by Hatsune Mona on 2020/4/2. 初音萌奈什喵的最可爱了喵！
+ * Created by Hatsune Mona on 2020/4/11. 初音萌奈什喵的最可爱了喵！
  */
-@WebServlet(name="注册",value = "/TeacherReg")
-public class TeacherReg extends javax.servlet.http.HttpServlet {
-
-  protected void doPost(javax.servlet.http.HttpServletRequest request,
-      javax.servlet.http.HttpServletResponse response)
-      throws javax.servlet.ServletException, IOException {
-
-    UsersEntity user = new UsersEntity();
+@WebServlet(name = "教师注册",value = "/TeacherReg")
+public class TeacherReg extends HttpServlet {
+  
+  protected void doPost(HttpServletRequest request,
+      HttpServletResponse response)
+      throws ServletException, IOException {
+    
+    TeachersinfoEntity teacher = new TeachersinfoEntity();
     response.setCharacterEncoding("UTF-8");
     request.setCharacterEncoding("UTF-8");
-    user.setUsername(request.getParameter("username"));
-    user.setPhonenum(request.getParameter("phonenum"));
-    user.setSex(request.getParameter("sex"));
-    user.setRealname(request.getParameter("realname"));
-    user.setUserpsw(request.getParameter("password2"));
-    user.setSchoolname(request.getParameter("school"));
-    user.setDept(request.getParameter("dept"));
-
-    UserDao.insertUser(user);
-
+    teacher.setTeacherNo(Integer.parseInt(request.getParameter("teacherNo")));
+    teacher.setTeacherName(request.getParameter("teacherName"));
+    teacher.setTeacherAge(Integer.parseInt(request.getParameter("teacherAge")));
+    teacher.setTeacherDepartment(Integer.parseInt(request.getParameter("teacherDept")));
+    teacher.setTeacherSex(request.getParameter("sex"));
   }
-
-  protected void doGet(javax.servlet.http.HttpServletRequest request,
-      javax.servlet.http.HttpServletResponse response)
-      throws javax.servlet.ServletException, IOException {
-
+  
+  protected void doGet(HttpServletRequest request,
+      HttpServletResponse response)
+      throws ServletException, IOException {
+    
   }
 }
