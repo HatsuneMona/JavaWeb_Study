@@ -5,7 +5,9 @@ package DAO;/**
 import DBUtil.SQLConnect;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import model.DepartmentsinfoEntity;
 import model.StudentsinfoEntity;
 
@@ -15,13 +17,13 @@ import model.StudentsinfoEntity;
  * @author: Created by Hatsune Mona. 初音萌奈什喵的最可爱了喵！
  * @create: 2020-04-10 21:12
  **/
-public class DepartmentDao {
+public class DepartmentDao extends DAO {
   
   static public int InsertDept(DepartmentsinfoEntity deptInfo) {
-    Connection connection = SQLConnect.getConnection();//打开数据库连接
-    PreparedStatement pstmt = null;
+    
     String insertSQL = "INSERT INTO departmentsinfo VALUES(?,?,?)";
     int flag = 0;
+    connection = SQLConnect.getConnection();
     try {
       pstmt = connection.prepareStatement(insertSQL);
       pstmt.setInt(1, deptInfo.getDepartmentNo());
@@ -31,20 +33,52 @@ public class DepartmentDao {
     } catch (SQLException e) {
       e.printStackTrace();
     } finally {
-      if (pstmt != null) {
-        try {
-          pstmt.close();
-        } catch (SQLException e) {
-          e.printStackTrace();
-        }
+      CloseConnection();
+    }
+    return flag;
+  }
+  
+  static public ArrayList<DepartmentsinfoEntity> SearchDept(Integer deptNo) {
+    ArrayList<DepartmentsinfoEntity> deptlist = new ArrayList<>();
+    String selectSQL;
+    connection = SQLConnect.getConnection();
+    try {
+      if (deptNo == null) {
+        selectSQL = "SELECT * FROM departmentsinfo";
+        pstmt = connection.prepareStatement(selectSQL);
+      } else {
+        selectSQL = "SELECT * FROM departmentsinfo WHERE departmentNo = ?";
+        pstmt = connection.prepareStatement(selectSQL);
+        pstmt.setInt(1, deptNo);
       }
-      if (connection != null) {
-        try {
-          connection.close();
-        } catch (SQLException e) {
-          e.printStackTrace();
-        }
+      ResultSet resultSet = pstmt.executeQuery();
+      while (resultSet.next()) {
+        DepartmentsinfoEntity deptTemp = new DepartmentsinfoEntity();
+        deptTemp.setDepartmentNo(resultSet.getInt(1));
+        deptTemp.setDepartmentName(resultSet.getString(2));
+        deptTemp.setDepartmentHead(resultSet.getInt(3));
+        deptlist.add(deptTemp);
       }
+    } catch (SQLException e) {
+      e.printStackTrace();
+    } finally {
+      CloseConnection();
+    }
+    return deptlist;
+  }
+  
+  static public int DeleteDept(int deptNo){
+    connection = SQLConnect.getConnection();
+    int flag = 0;
+    String deleteSQL = "DELETE FROM departmentsinfo WHERE departmentNo = ?";
+    try {
+      pstmt = connection.prepareStatement(deleteSQL);
+      pstmt.setInt(1, deptNo);
+      flag = pstmt.executeUpdate();
+    } catch (SQLException e) {
+      e.printStackTrace();
+    } finally {
+      CloseConnection();
     }
     return flag;
   }
