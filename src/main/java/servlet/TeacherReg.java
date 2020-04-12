@@ -22,6 +22,7 @@ public class TeacherReg extends HttpServlet {
     TeachersinfoEntity teacher = new TeachersinfoEntity();
     response.setCharacterEncoding("UTF-8");
     request.setCharacterEncoding("UTF-8");
+    
     teacher.setTeacherNo(Integer.parseInt(request.getParameter("teacherNo")));
     teacher.setTeacherName(request.getParameter("teacherName"));
     teacher.setTeacherAge(Integer.parseInt(request.getParameter("teacherAge")));

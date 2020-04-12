@@ -17,9 +17,29 @@ import model.StudentsinfoEntity;
  **/
 public class StudentDao {
   
+  static private Connection connection = SQLConnect.getConnection();//打开数据库连接
+  static private PreparedStatement pstmt = null;
+  
+  static public void CloseConnection(){
+    if (pstmt != null) {
+      try {
+        pstmt.close();
+        pstmt = null;
+      } catch (SQLException e) {
+        e.printStackTrace();
+      }
+    }
+    if (connection!= null) {
+      try {
+        connection.close();
+      } catch (SQLException e) {
+        e.printStackTrace();
+      }
+    }
+  }
+  
   static public int InsertCourse(StudentsinfoEntity studentInfo) {
-    Connection connection = SQLConnect.getConnection();//打开数据库连接
-    PreparedStatement pstmt = null;
+    connection = SQLConnect.getConnection();//打开数据库连接
     String insertSQL = "INSERT INTO studentsinfo VALUES(?,?,?,?,?)";
     int flag = 0;
     try {
@@ -33,20 +53,7 @@ public class StudentDao {
     } catch (SQLException e) {
       e.printStackTrace();
     } finally {
-      if (pstmt != null) {
-        try {
-          pstmt.close();
-        } catch (SQLException e) {
-          e.printStackTrace();
-        }
-      }
-      if (connection != null) {
-        try {
-          connection.close();
-        } catch (SQLException e) {
-          e.printStackTrace();
-        }
-      }
+      CloseConnection();
     }
     return flag;
   }
