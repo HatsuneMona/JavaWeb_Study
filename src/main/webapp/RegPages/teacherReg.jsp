@@ -1,4 +1,7 @@
-<!DOCTYPE html>
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
+<%@ page import="java.io.*,java.util.*,DAO.TeacherDao,model.TeachersinfoEntity" %>
+<%@ page import="DAO.DepartmentDao" %>
+
 <html lang="zh-cn">
 <head>
   <meta charset="UTF-8">
@@ -19,6 +22,14 @@
 
 </head>
 <body>
+<%
+  int tNo;
+  try {
+    if (request.getParameter("tno") != null) {
+      tNo = Integer.parseInt(request.getParameter("delete"));
+    }
+  }catch (Exception e){}
+%>
 <div class="text-center">
   <h3>教职工注册</h3>
 </div>

@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 <%@ page import="java.io.*,java.util.*,DAO.TeacherDao,model.TeachersinfoEntity" %>
+<%@ page import="DAO.DepartmentDao" %>
 
 <html lang="zh-cn">
 <head>
@@ -86,16 +87,16 @@
           <%=i.getTeacherSex()%><!--性别-->
         </td>
         <td>
-          <%=i.getTeacherDepartment()%><!--系部-->
+          <%=DepartmentDao.SearchDept(i.getTeacherDepartment()).get(0).getDepartmentName()%><!--系部-->
         </td>
-        <td><label><input type="radio" name="delete" value="<%=i.getTeacherNo()%>"/></label></td>
+        <td><label><input type="radio" name="tno" value="<%=i.getTeacherNo()%>"/></label></td>
         <!--选择框-->
       </tr>
       <%
         }
       } else {
       %>
-      <td colspan="6">教工编号：${param.teacherNo}，查无此人。</td><!--教职工编号-->
+      <td colspan="6">未能查询到数据。${param.teacherNo}</td><!--教职工编号-->
       <%
         }
       %>
@@ -104,9 +105,12 @@
     <table class="table table-hover">
       <tr>
         <td style="width: 50%;"></td>
-        <td style="width: 20%;"><input type="submit"
-                                       value="修改" class="btn btn-warning btn-block"
-                                       id="ModBtn" name="ModBtn">
+        <td style="width: 20%;">
+          <a><button value="修改" class="btn btn-warning btn-block"
+                     id="ModBtn" name="ModBtn"
+                     onclick="javascript:window.location.href=
+                     '../RegPages/teacherReg.jsp'">
+            修改</button> </a>
         </td>
         <td style="width: 5%"></td>
         <td style="width: 20%;">
@@ -122,8 +126,8 @@
 <%
   int delete;
   try {
-    if (request.getParameter("delete") != null) {
-      delete = Integer.parseInt(request.getParameter("delete"));
+    if (request.getParameter("tno") != null) {
+      delete = Integer.parseInt(request.getParameter("tno"));
       if (TeacherDao.DeleteTeacher(delete) == 1) {
 %>
 <div id="DeleteAlert" class="alert alert-warning">
