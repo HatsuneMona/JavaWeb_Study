@@ -26,9 +26,10 @@
   int tNo;
   try {
     if (request.getParameter("tno") != null) {
-      tNo = Integer.parseInt(request.getParameter("delete"));
+      tNo = Integer.parseInt(request.getParameter("tno"));
     }
-  }catch (Exception e){}
+  } catch (Exception e) {
+  }
 %>
 <div class="text-center">
   <h3>教职工注册</h3>

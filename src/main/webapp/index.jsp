@@ -29,24 +29,45 @@
     </td>
   </tr>
   <tr>
+    <td colspan="2">
+      <div style="height: calc(1em + 6px);
+      text-align: right;
+       background-color: #ff7850;">
+        <table style="float:right">
+          <tr>
+            <!--TODO:这里的当前用户，还有系统时间需要写一下-->
+            <td style="width: 100px;">当前用户：</td>
+            <td style="width: 200px; text-align: left">********</td>
+            <td style="width: 100px">系统时间：</td>
+            <td style="width: 200px; text-align: left">*******</td>
+          </tr>
+        </table>
+      </div>
+    </td>
+  </tr>
+  <tr>
     <td style="height:300px; width: 181px">
       <!--左侧-->
       <div class="left">
         <ul>
           <li>
-            <button type="button" class="btn btn-primary" onclick="showmain()">萌奈的主页
+            <button type="button" class="btn btn-primary"
+                    onclick="showmain()">萌奈的主页
             </button>
           </li>
           <li>
-            <button type="button" class="btn btn-primary" onclick="showshebao()">社保计算
+            <button type="button" class="btn btn-primary"
+                    onclick="showshebao()">社保计算
             </button>
           </li>
           <li>
-            <button type="button" class="btn btn-primary" onclick="showlogin()">登陆
+            <button type="button" class="btn btn-primary"
+                    onclick="showlogin()">登陆
             </button>
           </li>
           <li>
-            <button type="button" class="btn btn-primary" onclick="showReg()">录入新教师
+            <button type="button" class="btn btn-primary"
+                    onclick="showReg()">录入新教师
             </button>
           </li>
         </ul>

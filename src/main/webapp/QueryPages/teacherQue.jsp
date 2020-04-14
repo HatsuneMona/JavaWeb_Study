@@ -27,6 +27,21 @@
 <div class="text-center">
   <h3>教职工查询</h3>
 </div>
+<%
+  if (request.getParameter("teacherNo") == "DeleteOK") {
+%>
+<div class="alert alert-primary" role="alert">
+  教师删除成功！
+</div>
+<%
+} else {
+%>
+<div class="alert alert-warning" role="alert">
+  删除失败！
+</div>
+<%
+  }
+%>
 <div class="regmain container">
   <form action="./teacherQue.jsp" method="get">
     <table class="table table-bordered">
@@ -101,16 +116,19 @@
         }
       %>
     </table>
-    
+  
     <table class="table table-hover">
       <tr>
         <td style="width: 50%;"></td>
         <td style="width: 20%;">
-          <a><button value="修改" class="btn btn-warning btn-block"
-                     id="ModBtn" name="ModBtn"
-                     onclick="javascript:window.location.href=
+          <a>
+            <button value="修改" class="btn btn-warning btn-block"
+                    id="ModBtn" name="ModBtn"
+                    onclick="javascript:window.location.href=
                      '../RegPages/teacherReg.jsp'">
-            修改</button> </a>
+              修改
+            </button>
+          </a>
         </td>
         <td style="width: 5%"></td>
         <td style="width: 20%;">
@@ -120,7 +138,7 @@
         </td>
       </tr>
     </table>
-  
+
   </form>
 </div>
 <%
