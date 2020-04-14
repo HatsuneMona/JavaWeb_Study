@@ -9,48 +9,39 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import model.TeachersinfoEntity;
 
 /**
- * Created by Hatsune Mona on 2020/4/11. 初音萌奈什喵的最可爱了喵！
+ * Created by Hatsune Mona on 2020/4/12. 初音萌奈什喵的最可爱了喵！
  */
-@WebServlet(name = "教师注册", value = "/TeacherReg")
-public class TeacherReg extends HttpServlet {
+@WebServlet(name = "删除老师", value = "/TeacherDel")
+public class TeacherDel extends HttpServlet {
   
   protected void doPost(HttpServletRequest request,
       HttpServletResponse response)
       throws ServletException, IOException {
-  
-    TeachersinfoEntity teacher = new TeachersinfoEntity();
     response.setCharacterEncoding("UTF-8");
     request.setCharacterEncoding("UTF-8");
     response.setContentType("text/html;charset=UTF-8");
     PrintWriter out = response.getWriter();
-  
-    teacher.setTeacherNo(Integer.parseInt(request.getParameter("teacherNo")));
-    teacher.setTeacherName(request.getParameter("teacherName"));
-    teacher.setTeacherAge(Integer.parseInt(request.getParameter("teacherAge")));
-    teacher.setTeacherSex(request.getParameter("sex"));
-    teacher.setTeacherDepartment(Integer.parseInt(request.getParameter("teacherDept")));
-  
-    int insert = TeacherDao.InsertTeacher(teacher);
-    if (TeacherDao.DeleteTeacher(insert) == 1) {
-      out.println("<h3>添加成功！</h3>");
+    int delete = Integer.parseInt(request.getParameter("tno"));
+    if (TeacherDao.DeleteTeacher(delete) == 1) {
+      out.println("<h3>删除成功！</h3>");
       try {
         TimeUnit.MILLISECONDS.sleep(1000);//毫秒
       } catch (InterruptedException e) {
         e.printStackTrace();
       }
-      response.sendRedirect("/RegPages/teacherReg.jsp?status=OK");
+      response.sendRedirect("/QueryPages/teacherQue.jsp?status=DeleteOK");
     } else {
-      out.println("<h3>添加错误!</h3>");
+      out.println("<h3>删除错误!</h3>");
       try {
         TimeUnit.MILLISECONDS.sleep(1000);//毫秒
       } catch (InterruptedException e) {
         e.printStackTrace();
       }
-      response.sendRedirect("/QueryPages/teacherQue.jsp?status=Fail");
+      response.sendRedirect("/QueryPages/teacherQue.jsp?status=DeleteFail");
     }
+    
   }
   
   protected void doGet(HttpServletRequest request,

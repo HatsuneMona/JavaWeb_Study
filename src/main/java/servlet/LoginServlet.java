@@ -29,19 +29,20 @@ public class LoginServlet extends HttpServlet {
     PrintWriter out = response.getWriter();
     if (user != null) {
       out.print("登陆成功！欢迎用户：" + user.getUsername());
+      request.getSession().setAttribute("loginUser", user);
+      response.sendRedirect("/");
     } else {
       out.print("登陆失败");
     }
-    
+  
     //将用户的名称保存到session属性中
-    request.getSession().setAttribute("name", request.getRemoteAddr() + username);
-    
-    //登录成功后，保存名称为JSESSIONID的id的cookie，值为session的id
-    Cookie loginCookie = new Cookie("sessionID", request.getSession().getId());
-    loginCookie.setMaxAge(60 * 100);
-    loginCookie.setPath("/");
-    
-    response.addCookie(loginCookie);
+
+//    //登录成功后，保存名称为JSESSIONID的id的cookie，值为session的id
+//    Cookie loginCookie = new Cookie("sessionID", request.getSession().getId());
+//    loginCookie.setMaxAge(60 * 100);
+//    loginCookie.setPath("/");
+//
+//    response.addCookie(loginCookie);
   }
   
   protected void doGet(HttpServletRequest request,
