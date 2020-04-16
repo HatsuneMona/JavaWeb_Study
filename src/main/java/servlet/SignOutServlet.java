@@ -18,26 +18,29 @@ public class SignOutServlet extends HttpServlet {
   protected void doPost(HttpServletRequest request,
       HttpServletResponse response)
       throws ServletException, IOException {
-    response.setContentType("text/html;charset=UTF-8");
-    PrintWriter out = response.getWriter();
-    String user = (String) request.getSession().getAttribute("loginUser");
-    if (user != null) {
-      request.setAttribute("loginUser", null);
-      out.print("登出成功！");
-    } else {
-      out.print("登出失败");
-    }
-    try {
-      Thread.sleep(1000);
-    } catch (InterruptedException e) {
-      e.printStackTrace();
-    }
-    response.sendRedirect("/");
+//    response.setContentType("text/html;charset=UTF-8");
+//    PrintWriter out = response.getWriter();
+//    String user = (String) request.getSession().getAttribute("loginUser");
+//    if (user != null) {
+//      request.setAttribute("loginUser", null);
+//      out.print("登出成功！");
+//    } else {
+//      out.print("登出失败");
+//    }
+//    response.sendRedirect("/");
   }
   
   protected void doGet(HttpServletRequest request,
       HttpServletResponse response)
       throws ServletException, IOException {
-    
+    response.setContentType("text/html;charset=UTF-8");
+    PrintWriter out = response.getWriter();
+    if (request.getSession().getAttribute("loginUser") != null) {
+      request.getSession().removeAttribute("loginUser");
+      out.print("登出成功！");
+    } else {
+      out.print("登出失败");
+    }
+    response.sendRedirect("/");
   }
 }

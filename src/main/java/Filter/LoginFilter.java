@@ -19,7 +19,7 @@ import org.eclipse.jetty.server.Authentication.User;
     "/QueryPages/teacherQue.jsp",
     "/RegPages/teacherReg.jsp",
     "/userReg.jsp",
-    "/RegPages/deptReg.html",
+    "/RegPages/deptReg.jsp",
     "/RegPages/userReg.jsp"
 })
 public class LoginFilter implements Filter {

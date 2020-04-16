@@ -43,7 +43,7 @@
               %>未登录&nbsp;&nbsp;&nbsp; <a href="login.jsp">登录</a><%
             } else {
             %><%=session.getAttribute("loginUser")%>
-              &nbsp;&nbsp;&nbsp;<a onclick="<%--<%session.setAttribute("loginUser",null);%>--%>">退出登录</a>
+              &nbsp;&nbsp;&nbsp;<a href="/SignOut?do=quit">退出登录</a>
               <%
                 }
               %>
@@ -66,12 +66,14 @@
               萌奈的主页
             </button>
           </li>
+          <%if (session.getAttribute("loginUser") == null) {%>
           <li>
             <button type="button" class="btn btn-primary"
                     onclick="window.location.href='login.jsp'">
               登陆
             </button>
           </li>
+          <%}%>
           <%if (session.getAttribute("loginUser") != null) {%>
           <li>
             <button type="button" class="btn btn-primary"
@@ -87,7 +89,7 @@
           </li>
           <li>
             <button type="button" class="btn btn-primary"
-                    onclick="document.getElementById('main_iframe').src='./RegPages/deptReg.html'">
+                    onclick="document.getElementById('main_iframe').src='./RegPages/deptReg.jsp'">
               添加系部
             </button>
           </li>
