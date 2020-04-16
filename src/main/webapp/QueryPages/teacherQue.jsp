@@ -74,7 +74,6 @@
         <td class="bg-primary text-center" style="max-width: 30px;">系部</td>
         <td class="bg-primary text-center" style="max-width: 30px;">选择</td>
       </tr>
-      <!--    TODO 用jsp加个循环-->
       <%
         Integer no = null;
         try {
