@@ -2,7 +2,14 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="e5cb6265-df2e-4967-85c9-87c1caa1f588" name="北京Root" url="http://javaweb.shoumiao.top">
+      <webServer id="d045e6c3-8e13-4fb5-a113-9a84496815e3" name="呼和浩特root" url="http://javaweb.moeneko.top">
+        <fileTransfer rootFolder="/www/wwwroot" accessType="SFTP" host="39.104.206.207" port="22" sshConfigId="868893e4-cd92-42af-9ca5-f961c3db7886" sshConfig="root@39.104.206.207:22 key" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+      <webServer id="e295e963-d4bc-4b85-8bbf-2a7ab7d97cd6" name="北京WebRoot" url="http://javaweb.shoumiao.top">
         <fileTransfer host="123.56.220.189" port="21">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />

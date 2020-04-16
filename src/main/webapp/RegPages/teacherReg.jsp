@@ -35,7 +35,7 @@
   <h3>教职工注册</h3>
 </div>
 <div class="regmain container"> <!--后者居中-->
-  <!--  TODO 把这个action改到servlet上去-->
+  
   <form action="/TeacherReg" method="post">
     <table class="table table-bordered">
       <tr>

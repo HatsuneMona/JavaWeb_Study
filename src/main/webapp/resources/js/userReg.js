@@ -34,14 +34,14 @@ function checksex() {
 }
 
 function checkDept() {
-  dept = $("#dept").val();//jQuery语法
+  password = $("#password").val();//jQuery语法
   //以字母开头，字母与数字的组合，3-10字符
   let unameRegExp = /^[0-9]{2,9}$/;
-  if (unameRegExp.test(dept)) {
-    $("#dept").css("border-color", "");
+  if (unameRegExp.test(password)) {
+    $("#password").css("border-color", "");
     return true;
   } else {
-    $("#dept").css("border-color", "red");
+    $("#password").css("border-color", "red");
     return false;
   }
 }
@@ -59,13 +59,13 @@ function checkRealname() {
   }
 }
 
-var dept;
+var password;
 
 function checkPassword1() {
-  dept = $("#password1").val();//jQuery语法
+  password = $("#password1").val();//jQuery语法
   //以字母开头，字母与数字的组合，3-10字符
-  let unameRegExp = /^[\w]{2,5}$/;
-  if (unameRegExp.test(dept)) {
+  let unameRegExp = /^\w{3,10}$/;
+  if (unameRegExp.test(password)) {
     $("#password1").css("border-color", "");
     return true;
   } else {
@@ -79,7 +79,7 @@ function checkPassword2() {
   //let pw2 = $("#password2").val();
   //以字母开头，字母与数字的组合，3-10字符
   //let unameRegExp = /^[0-9][a-z][A-Z]{2,5}$/;
-  if (dept !== "" && dept === $("#password2").val()) {
+  if (password !== "" && password === $("#password2").val()) {
     $("#password2").css("border-color", "");
     return true;
   } else {

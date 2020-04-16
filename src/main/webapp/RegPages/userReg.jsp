@@ -30,7 +30,7 @@
 </head>
 <body>
 <div class="text-center">
-  <h3>教师注册</h3>
+  <h3>新用户注册</h3>
 </div>
 <div class="regmain container"> <!--后者居中-->
   <form action="/StudentReg" method="post">
