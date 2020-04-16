@@ -130,14 +130,14 @@ public class UsersEntity {
 
 
   /**
-   * @return the dept
+   * @return the password
    */
   public String getDept() {
     return dept;
   }
-
+  
   /**
-   * @param dept the dept to set
+   * @param dept the password to set
    */
   public void setDept(String dept) {
     this.dept = dept;

@@ -1,6 +1,7 @@
 package Filter;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
 import javax.servlet.FilterConfig;
@@ -17,26 +18,31 @@ import org.eclipse.jetty.server.Authentication.User;
 @WebFilter(filterName = "LoginFilter", value = {
     "/QueryPages/teacherQue.jsp",
     "/RegPages/teacherReg.jsp",
-    "/userReg.jsp"
+    "/userReg.jsp",
+    "/RegPages/deptReg.html",
+    "/RegPages/userReg.jsp"
 })
 public class LoginFilter implements Filter {
   
   public void destroy() {
   }
   
-  public void doFilter(ServletRequest req, ServletResponse resp,
-      FilterChain chain) throws ServletException, IOException {
-    chain.doFilter(req, resp);
-    
+  public void doFilter(ServletRequest req, ServletResponse resp, FilterChain chain)
+      throws ServletException, IOException {
+//    chain.doFilter(req, resp);
     HttpServletRequest httpServletRequest = (HttpServletRequest) req;
-    User user = (User) httpServletRequest.getSession().getAttribute("loginUser");
+    resp.setContentType("text/html;charset=UTF-8");
+    String user = (String) httpServletRequest.getSession().getAttribute("loginUser");
     if (null != user) {
       //已登录，放行
       chain.doFilter(req, resp);
     } else {
       //未登录，提示登录
-      httpServletRequest.setAttribute("msg", "您还没有登录，请登录后访问");
-      httpServletRequest.getRequestDispatcher("/index.jsp").forward(req, resp);
+      PrintWriter out = resp.getWriter();
+      
+      out.write("<script>function alerttest(){alert('用户未登录！');}</script>");
+      out.write("<h3 onload='alerttest()'>操作被拒绝：用户未登录</h3>");
+//      httpServletRequest.getRequestDispatcher("/index.jsp").forward(req, resp);
     }
   }
   

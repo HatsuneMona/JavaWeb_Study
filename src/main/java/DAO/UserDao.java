@@ -67,7 +67,7 @@ public class UserDao {
           user.setUsername(resault.getString("username"));
           user.setRealname(resault.getString("realname"));
           user.setSex(resault.getString("sex"));
-          user.setDept(resault.getString("dept"));
+          user.setDept(resault.getString("password"));
           user.setSchoolname(resault.getString("school"));
           user.setPhonenum(resault.getString("phonenum"));
         }

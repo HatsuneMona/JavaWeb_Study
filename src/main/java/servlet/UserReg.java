@@ -24,7 +24,7 @@ public class UserReg extends javax.servlet.http.HttpServlet {
     user.setRealname(request.getParameter("realname"));
     user.setUserpsw(request.getParameter("password2"));
     user.setSchoolname(request.getParameter("school"));
-    user.setDept(request.getParameter("dept"));
+    user.setDept(request.getParameter("password"));
 
     UserDao.insertUser(user);
 

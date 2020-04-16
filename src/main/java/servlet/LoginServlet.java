@@ -29,7 +29,7 @@ public class LoginServlet extends HttpServlet {
     PrintWriter out = response.getWriter();
     if (user != null) {
       out.print("登陆成功！欢迎用户：" + user.getUsername());
-      request.getSession().setAttribute("loginUser", user);
+      request.getSession().setAttribute("loginUser", user.getUsername());
       response.sendRedirect("/");
     } else {
       out.print("登陆失败");
