@@ -15,12 +15,19 @@ import org.eclipse.jetty.server.Authentication.User;
 /**
  * Created by Hatsune Mona on 2020/4/14. 初音萌奈什喵的最可爱了喵！
  */
-@WebFilter(filterName = "LoginFilter", value = {
+@WebFilter(filterName = "登录检查", value = {
     "/QueryPages/teacherQue.jsp",
     "/RegPages/teacherReg.jsp",
     "/userReg.jsp",
     "/RegPages/deptReg.jsp",
-    "/RegPages/userReg.jsp"
+    "/RegPages/userReg.jsp",
+    "/ModifyPages/teacherModify.jsp",
+    "/TeacherReg",
+    "/DeptReg",
+    "/TeacherDel",
+    "/TeacherReg",
+    "/UserReg",
+    "/ModifyTeacherServlet"
 })
 public class LoginFilter implements Filter {
   
