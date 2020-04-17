@@ -12,36 +12,12 @@
         href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
         integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
         crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.slim.min.js"
-          integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-          crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-          integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-          crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
-          integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-          crossorigin="anonymous"></script>
   <link rel="stylesheet" href="../resources/css/mainStyleShell.css" type="text/css">
 </head>
 <body>
 <div class="text-center">
   <h3>教职工查询</h3>
 </div>
-<%
-  if (request.getParameter("teacherNo") == "DeleteOK") {
-%>
-<div class="alert alert-primary" role="alert">
-  教师删除成功！
-</div>
-<%
-} else {
-%>
-<div class="alert alert-warning" role="alert">
-  删除失败！
-</div>
-<%
-  }
-%>
 <div class="regmain container">
   <form action="./teacherQue.jsp" method="get">
     <table class="table table-bordered">
@@ -149,7 +125,7 @@
 %>
 <div id="DeleteAlert" class="alert alert-warning">
   <a href="#" class="close" data-dismiss="alert">&times;</a>
-  <strong>成功！</strong>编号为 ${param.delete} 的教师已被删除。
+  <strong>成功！</strong>编号为 ${param.tno} 的教师已被删除。
 </div>
 <script>
   $(function () {
@@ -165,6 +141,14 @@
   
   }
 %>
-
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
 </body>
 </html>

@@ -25,124 +25,142 @@
 
 </head>
 <body>
-<table>
-  <tr>
-    <td>
-      <div class="text-center">
-        <h3>系部注册</h3>
-      </div>
-      <div class="regmain container"> <!--后者居中-->
-        <form action="/DeptReg" method="post">
-          <table class="table table-bordered">
-            <tr>
-              <td class="bg-primary text-center" style="max-width: 150px;">系部编号：</td>
-              <td><input type="text" id="deptNo" name="deptNo"
-                         class="form-control" onblur="checkDeptNo()"
-                         placeholder="请输入系部编号">
-              </td>
-            </tr>
-            <tr>
-              <td class="bg-primary text-center">系部名：</td>
-              <td><input type="text" id="deptName" name="deptName"
-                         class="form-control" onblur="checkDeptName()"
-                         placeholder="系部名称"></td>
-            </tr>
-            
-            <tr>
-              <td class="bg-primary text-center">系部主任：</td>
-              <td><input type="text" onblur="checkDeptHeader()"
-                         id="deptHeader" name="deptHeader"
-                         class="form-control" placeholder="请输入系部主任教师编号"></td>
-            </tr>
-            <tr>
-              <td colspan="2">
-                <input type="submit" onclick="return checkAll()"
-                       value="注册" class="btn btn-danger btn-block">
-              </td>
-            </tr>
-          </table>
-        </form>
-      </div>
-    </td>
-    <td>
-      <div class="regmain container">
-        <form action="./teacherQue.jsp" method="post">
-          <table class="table table-bordered  table-striped table-hover"
-                 style="text-align: center;">
-            <tr>
-              <td class="bg-primary text-center" style="max-width: 30px;">系部编号</td>
-              <td class="bg-primary text-center" style="max-width: 30px;">名称</td>
-              <td class="bg-primary text-center" style="max-width: 30px;">系领导名字</td>
-              <td class="bg-primary text-center" style="max-width: 30px;">选择</td>
-            </tr>
-            <%
-              ArrayList<DepartmentsinfoEntity> tlist = DepartmentDao.SearchDept(null);
-              if (tlist.size() != 0) {
-                for (DepartmentsinfoEntity i : tlist) {
-            %>
-            <tr>
-              <td>
-                <%=i.getDepartmentNo()%><!--系部编号-->
-              </td>
-              <td>
-                <%=i.getDepartmentName()%><!--系部名称-->
-              </td>
-              <td>
-                <%=TeacherDao.SearchTeacher(i.getDepartmentHead()).get(0).getTeacherName() %><!--系领导名字-->
-              </td>
+<div class="container">
+  <table style="width: 99%;">
+    <tr>
+      <td valign="top">
+        <div><br><br></div>
+        <div class="text-center">
+          <h3>系部注册</h3>
+        </div>
+        <div>
+          <form action="/DeptReg" method="post">
+            <table class="table table-bordered">
+              <tr>
+                <td class="bg-primary text-center" style="width: 180px;">系部编号：</td>
+                <td><input type="text" id="deptNo" name="deptNo"
+                           class="form-control" onblur="checkDeptNo()"
+                           placeholder="请输入系部编号">
+                </td>
+              </tr>
+              <tr>
+                <td class="bg-primary text-center">系部名：</td>
+                <td><input type="text" id="deptName" name="deptName"
+                           class="form-control" onblur="checkDeptName()"
+                           placeholder="系部名称"></td>
+              </tr>
               
-              <td><label><input type="radio" name="tno" value="<%=i.getDepartmentNo()%>"/></label>
-              </td>
-              <!--选择框-->
-            </tr>
-            <%
-              }
-            } else {
-            %>
-            <td colspan="4">未能查询到数据。</td>
-            <%
-              }
-            %>
-          </table>
+              <tr>
+                <td class="bg-primary text-center">系部主任：</td>
+                <td><input type="text" onblur="checkDeptHeader()"
+                           id="deptHeader" name="deptHeader"
+                           class="form-control" placeholder="请输入系部主任教师编号"></td>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  <input type="submit" onclick="return checkAll()"
+                         value="注册" class="btn btn-danger btn-block">
+                </td>
+              </tr>
+            </table>
+          </form>
+        </div>
+      </td>
+      <td style="width: 30px">
+        <%--占位--%>
+      </td>
+      <td>
+        <div>
+          <form action="./deptReg.jsp" method="post">
+            <table class="table table-bordered  table-striped table-hover"
+                   style="text-align: center;">
+              <tr>
+                <td class="bg-primary text-center" style="max-width: 180px;">系部编号</td>
+                <td class="bg-primary text-center" style="max-width: 200px;">名称</td>
+                <td class="bg-primary text-center" style="max-width: 180px;">系领导名字</td>
+                <td class="bg-primary text-center" style="max-width: 30px;">选择</td>
+              </tr>
+              <%
+                ArrayList<DepartmentsinfoEntity> tlist = DepartmentDao.SearchDept(null);
+                if (tlist.size() != 0) {
+                  for (DepartmentsinfoEntity i : tlist) {
+              %>
+              <tr>
+                <td>
+                  <%=i.getDepartmentNo()%><!--系部编号-->
+                </td>
+                <td>
+                  <%=i.getDepartmentName()%><!--系部名称-->
+                </td>
+                <td>
+                  <%
+                    String deptHeaderName = null;
+                    try {
+                      deptHeaderName = TeacherDao.SearchTeacher(i.getDepartmentHead()).get(0)
+                          .getTeacherName();
+                    } catch (Exception e) {
+                      e.printStackTrace();
+                    }
+                    if (deptHeaderName != null) {%>
+                  <%=deptHeaderName%><!--系领导名字-->
+                  <%} else {%>
+                  查无此人
+                  <%}%>
+                
+                </td>
+                
+                <td><label><input type="radio" name="dno" value="<%=i.getDepartmentNo()%>"/></label>
+                </td>
+                <!--选择框-->
+              </tr>
+              <%
+                }
+              } else {
+              %>
+              <td colspan="4">未能查询到数据。</td>
+              <%
+                }
+              %>
+            </table>
+            
+            <table class="table table-hover">
+              <tr>
+                <td style="width: 50%;"></td>
+                <td style="width: 20%;">
+                </td>
+                <td style="width: 5%"></td>
+                <td style="width: 20%;">
+                  <input type="submit"
+                         value="删除" class="btn btn-danger btn-block"
+                         id="DelBtn" name="DelBtn">
+                </td>
+              </tr>
+            </table>
           
-          <table class="table table-hover">
-            <tr>
-              <td style="width: 50%;"></td>
-              <td style="width: 20%;">
-                <a>
-                  <button value="修改" class="btn btn-warning btn-block"
-                          id="ModBtn" name="ModBtn"
-                          onclick="javascript:window.location.href=
-                     '../RegPages/teacherReg.jsp'">
-                    修改
-                  </button>
-                </a>
-              </td>
-              <td style="width: 5%"></td>
-              <td style="width: 20%;">
-                <input type="submit"
-                       value="删除" class="btn btn-danger btn-block"
-                       id="DelBtn" name="DelBtn">
-              </td>
-            </tr>
-          </table>
-        
-        </form>
-      </div>
-      <%
-        int delete;
-        try {
-          if (request.getParameter("tno") != null) {
-            delete = Integer.parseInt(request.getParameter("tno"));
-            if (TeacherDao.DeleteTeacher(delete) == 1) {
-      %>
-      <div id="DeleteAlert" class="alert alert-warning">
-        <a href="#" class="close" data-dismiss="alert">&times;</a>
-        <strong>成功！</strong>编号为 ${param.delete} 的教师已被删除。
-      </div>
-    </td>
-  </tr>
-</table>
+          </form>
+        </div>
+        <%
+          int delete;
+          try {
+            if (request.getParameter("dno") != null) {
+              delete = Integer.parseInt(request.getParameter("dno"));
+              if (DepartmentDao.DeleteDept(delete) == 1) {
+        %>
+        <div id="DeleteAlert" class="alert alert-warning">
+          <a href="#" class="close" data-dismiss="alert">&times;</a>
+          <strong>成功！</strong>编号为 ${param.dno} 的系部已被删除。
+        </div>
+        <%
+              }
+            }
+          } catch (NumberFormatException e) {
+            e.printStackTrace();
+          }
+        %>
+      </td>
+    </tr>
+  </table>
+</div>
 
 
 <script src="../resources/js/deptreg.js"></script>

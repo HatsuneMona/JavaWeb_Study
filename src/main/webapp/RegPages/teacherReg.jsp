@@ -7,8 +7,10 @@
   <meta charset="UTF-8">
   <title>TeacerReg</title>
   <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
-        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.slim.min.js"
           integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
           crossorigin="anonymous"></script>
@@ -42,26 +44,27 @@
         <td class="bg-primary text-center" style="max-width: 150px;">教职工编号：</td>
         <td><input type="text" id="teacherNo" name="teacherNo"
                    class="form-control" onblur="checkTeacherNo()"
-                   placeholder="请输入教职工编号">
+                   placeholder="请输入教职工编号" value="${param.tno}">
         </td>
       </tr>
       <tr>
         <td class="bg-primary text-center">教职工姓名：</td>
         <td><input type="text" id="teacherName" name="teacherName"
                    class="form-control" onblur="checkTeacherName()"
-                   placeholder="请输入教师姓名"></td>
+                   placeholder="请输入教师姓名" value="${param.tname}"></td>
       </tr>
       <tr>
         <td class="bg-primary text-center">工龄：</td>
         <td><input type="text" onblur="checkTeacherAge()"
                    id="teacherAge" name="teacherAge"
-                   class="form-control" placeholder="请输入教师工龄"></td>
+                   class="form-control" placeholder="请输入教师工龄"
+                   value="${param.tage}"></td>
       </tr>
       <tr>
         <td class="bg-primary text-center">任职系部：</td>
         <td><input type="text" onblur="checkTeacherDept()"
                    id="teacherDept" name="teacherDept"
-                   class="form-control" placeholder="请输入系部编号"></td>
+                   class="form-control" placeholder="请输入系部编号" value="${param.tdeptno}"></td>
       </tr>
       <tr>
         <td class="bg-primary text-center">性别：</td>
@@ -88,5 +91,8 @@
   </form>
 </div>
 <script src="../resources/js/teacherreg.js"></script>
+<script>
+
+</script>
 </body>
 </html>

@@ -90,7 +90,7 @@
           <li>
             <button type="button" class="btn btn-primary"
                     onclick="document.getElementById('main_iframe').src='./RegPages/deptReg.jsp'">
-              添加系部
+              添加/查询系部
             </button>
           </li>
           <li>
