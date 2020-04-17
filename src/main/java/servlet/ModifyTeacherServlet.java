@@ -12,44 +12,49 @@ import javax.servlet.http.HttpServletResponse;
 import model.TeachersinfoEntity;
 
 /**
- * Created by Hatsune Mona on 2020/4/11. 初音萌奈什喵的最可爱了喵！
+ * Created by Hatsune Mona on 2020/4/17. 初音萌奈什喵的最可爱了喵！
  */
-@WebServlet(name = "教师注册", value = "/TeacherReg")
-public class TeacherReg extends HttpServlet {
+@WebServlet(name = "教师信息修改", value = "/ModifyTeacherServlet")
+public class ModifyTeacherServlet extends HttpServlet {
   
   protected void doPost(HttpServletRequest request,
       HttpServletResponse response)
       throws ServletException, IOException {
-  
+    
     TeachersinfoEntity teacher = new TeachersinfoEntity();
     response.setCharacterEncoding("UTF-8");
     request.setCharacterEncoding("UTF-8");
     response.setContentType("text/html;charset=UTF-8");
     PrintWriter out = response.getWriter();
-  
+    
     teacher.setTeacherNo(Integer.parseInt(request.getParameter("teacherNo")));
     teacher.setTeacherName(request.getParameter("teacherName"));
     teacher.setTeacherAge(Integer.parseInt(request.getParameter("teacherAge")));
     teacher.setTeacherSex(request.getParameter("sex"));
     teacher.setTeacherDepartment(Integer.parseInt(request.getParameter("teacherDept")));
-  
+    
+    int delete = TeacherDao.DeleteTeacher(teacher.getTeacherNo());
     int insert = TeacherDao.InsertTeacher(teacher);
-    if (insert == 1) {
-      out.println("<h3>添加成功！</h3>");
+    if (delete == 1 && insert == 1) {
+      out.println("<h3>修改成功！</h3>");
       try {
         TimeUnit.MILLISECONDS.sleep(1000);//毫秒
       } catch (InterruptedException e) {
         e.printStackTrace();
       }
-      response.sendRedirect("/RegPages/teacherReg.jsp?status=OK");
+      response
+          .sendRedirect("/ModifyPages/teacherModify.jsp?status=OK&tno=" + teacher.getTeacherNo());
     } else {
-      out.println("<h3>添加错误!</h3>");
+      System.out.println("删除状态：" + delete);
+      System.out.println("写入状态" + insert);
+      out.println("<h3>修改错误!</h3>");
       try {
         TimeUnit.MILLISECONDS.sleep(1000);//毫秒
       } catch (InterruptedException e) {
         e.printStackTrace();
       }
-      response.sendRedirect("/QueryPages/teacherQue.jsp?status=Fail");
+      response
+          .sendRedirect("/ModifyPages/teacherModify.jsp?status=Fail&tno=" + teacher.getTeacherNo());
     }
   }
   

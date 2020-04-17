@@ -6,7 +6,6 @@
 <head>
   <meta charset="UTF-8">
   <title>教师查询</title>
-  <title>教职工注销</title>
   <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
@@ -18,6 +17,25 @@
 <div class="text-center">
   <h3>教职工查询</h3>
 </div>
+<%
+  try {
+    if (Objects.equals(request.getParameter("status"), "DeleteOK")) {
+%>
+<div id="DeleteAlert" name="DeleteAlert" class="alert alert-warning">
+  <a href="#" class="close" data-dismiss="alert">&times;</a>
+  <strong>成功！</strong>编号为 ${param.tno} 的教师已被删除。
+</div>
+<script>
+  $(function () {
+        $("#DeleteAlert").alert();
+      }
+  );
+</script>
+<%
+    }
+  } catch (Exception e) {
+  }
+%>
 <div class="regmain container">
   <form action="./teacherQue.jsp" method="get">
     <table class="table table-bordered">
@@ -40,7 +58,7 @@
   </form>
 </div>
 <div class="regmain container">
-  <form action="./teacherQue.jsp" method="post">
+  <form action="" id="queform" name="queform" method="post">
     <table class="table table-bordered  table-striped table-hover" style="text-align: center;">
       <tr>
         <td class="bg-primary text-center" style="max-width: 30px;">教职工编号</td>
@@ -79,7 +97,8 @@
         <td>
           <%=DepartmentDao.SearchDept(i.getTeacherDepartment()).get(0).getDepartmentName()%><!--系部-->
         </td>
-        <td><label><input type="radio" name="tno" value="<%=i.getTeacherNo()%>"/></label></td>
+        <td><label><input type="radio" name="choosetno" id="choosetno"
+                          value="<%=i.getTeacherNo()%>"/></label></td>
         <!--选择框-->
       </tr>
       <%
@@ -91,7 +110,7 @@
         }
       %>
     </table>
-  
+    
     <table class="table table-hover">
       <tr>
         <td style="width: 50%;"></td>
@@ -99,48 +118,41 @@
           <a>
             <button value="修改" class="btn btn-warning btn-block"
                     id="ModBtn" name="ModBtn"
-                    onclick="javascript:window.location.href=
-                     '../RegPages/teacherReg.jsp'">
+                    onclick="modifySubmit()">
               修改
             </button>
           </a>
         </td>
         <td style="width: 5%"></td>
         <td style="width: 20%;">
-          <input type="submit"
-                 value="删除" class="btn btn-danger btn-block"
-                 id="DelBtn" name="DelBtn">
+          <a>
+            <button value="删除" class="btn btn-danger btn-block"
+                    id="DelBtn" name="DelBtn"
+                    onclick="deleteSubmit()">
+              删除
+            </button>
+          </a>
+          <%--          <input type="submit"
+                           value="删除" class="btn btn-danger btn-block"
+                           id="DelBtn" name="DelBtn">--%>
         </td>
       </tr>
     </table>
-
+  
   </form>
 </div>
-<%
-  int delete;
-  try {
-    if (request.getParameter("tno") != null) {
-      delete = Integer.parseInt(request.getParameter("tno"));
-      if (TeacherDao.DeleteTeacher(delete) == 1) {
-%>
-<div id="DeleteAlert" class="alert alert-warning">
-  <a href="#" class="close" data-dismiss="alert">&times;</a>
-  <strong>成功！</strong>编号为 ${param.tno} 的教师已被删除。
-</div>
+
 <script>
-  $(function () {
-        $("#DeleteAlert").alert();
-        window.navigate("./teacherQue.jsp");
-      }
-  );
-</script>
-<%
-      }
-    }
-  } catch (Exception e) {
-  
+  function deleteSubmit() {
+    queform.action = "/TeacherDel";
+    queform.submit();
   }
-%>
+
+  function modifySubmit() {
+    queform.action = "/ModifyPages/teacherModify.jsp";
+    queform.submit();
+  }
+</script>
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
         crossorigin="anonymous"></script>
