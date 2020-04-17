@@ -4,17 +4,17 @@
 <%
   Integer tno = null;
   try {
-    tno = Integer.parseInt((String) session.getAttribute("choosetno"));
+    tno = Integer.parseInt(request.getParameter("choosetno"));
   } catch (NumberFormatException e) {
     e.printStackTrace();
   }
   TeachersinfoEntity teacherInfo = TeacherDao.SearchTeacher(tno).get(0);
   String maleChecked = "";
   String femaleChecked = "";
-  if (teacherInfo.getTeacherSex() == "男") {
-    maleChecked = "checked";
+  if (Objects.equals(teacherInfo.getTeacherSex(), "男")) {
+    maleChecked = " checked=\"checked\"";
   } else {
-    femaleChecked = "checked";
+    femaleChecked = " checked=\"checked\"";
   }
 %>
 <html lang="zh-cn">
@@ -43,13 +43,23 @@
   <h3>教职工信息修改</h3>
 </div>
 <%
-  if (teacherInfo == null) {
+  try {
+    if (Objects.equals(request.getParameter("status"), "OK")) {
 %>
-<div class="alert alert-danger" role="alert">
-  修改信息错误，请重试。
+<div id="StatusAlert" name="StatusAlert" class="alert alert-warning">
+  <a href="#" class="close" data-dismiss="alert">&times;</a>
+  <strong>成功！</strong>编号为 ${param.choosetno} 的教师已修改。
 </div>
+<script>
+  $(function () {
+        $("#StatusAlert").alert();
+      }
+  );
+</script>
 <%
-} else {
+    }
+  } catch (Exception e) {
+  }
 %>
 <div class="regmain container"> <!--后者居中-->
   <form action="/ModifyTeacherServlet" method="post">
@@ -57,7 +67,7 @@
       <tr>
         <td class="bg-primary text-center" style="max-width: 150px;">教职工编号：</td>
         <td><input type="text" id="teacherNo" name="teacherNo"
-                   class="form-control" onblur="checkTeacherNo()" disabled="disabled"
+                   class="form-control" onblur="checkTeacherNo()" readonly="readonly"
                    placeholder="请输入教职工编号" value="<%=teacherInfo.getTeacherNo()%>">
         </td>
       </tr>
@@ -106,6 +116,5 @@
   </form>
 </div>
 <script src="../resources/js/teacherreg.js"></script>
-<%}%>
 </body>
 </html>

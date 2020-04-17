@@ -42,8 +42,8 @@ public class ModifyTeacherServlet extends HttpServlet {
       } catch (InterruptedException e) {
         e.printStackTrace();
       }
-      response
-          .sendRedirect("/ModifyPages/teacherModify.jsp?status=OK&tno=" + teacher.getTeacherNo());
+      response.sendRedirect(
+          "/ModifyPages/teacherModify.jsp?status=OK&choosetno=" + teacher.getTeacherNo());
     } else {
       System.out.println("删除状态：" + delete);
       System.out.println("写入状态" + insert);
@@ -54,7 +54,8 @@ public class ModifyTeacherServlet extends HttpServlet {
         e.printStackTrace();
       }
       response
-          .sendRedirect("/ModifyPages/teacherModify.jsp?status=Fail&tno=" + teacher.getTeacherNo());
+          .sendRedirect(
+              "/ModifyPages/teacherModify.jsp?status=Fail&choosetno=" + teacher.getTeacherNo());
     }
   }
   
