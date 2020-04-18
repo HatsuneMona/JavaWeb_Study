@@ -24,7 +24,7 @@
     <td colspan="2">
       <!--标题-->
       <div class="top">
-        <h1>欢迎光临</h1>
+        <h1>萌奈的教师管理系统</h1>
       </div>
     </td>
   </tr>
@@ -32,7 +32,7 @@
     <td colspan="2">
       <div style="height: 22px;
       text-align: right;
-       background-color: #ff7850;">
+       background-color: #58C9B9;">
         <table style="float:right">
           <tr>
             
@@ -59,7 +59,7 @@
     <td style="height:300px; width: 181px">
       <!--左侧-->
       <div class="left">
-        <ul>
+        <ul class="container">
           <li>
             <button type="button" class="btn btn-primary"
                     onclick="document.getElementById('main_iframe').src='https://www.moeneko.top/'">
@@ -111,10 +111,7 @@
     </td>
     <td>
       <!--主要-->
-      <%--      <div class="main_div">--%>
-      <!--    <iframe src="Calculation.jsp" class="main_iframe">    </iframe>-->
-      <iframe class="main_iframe" id="main_iframe" src="/OtherPages/mainiframe.html"></iframe>
-      <%--      </div>--%>
+      <iframe class="main_iframe" id="main_iframe" src="https://www.moeneko.top/"></iframe>
     </td>
   </tr>
   <tr>
@@ -122,7 +119,10 @@
       <!--底部-->
       <div class="bottom">
         <p>Copyright &copy; by HatsuneMona All Rights Reserved.</p>
-        <!--                <p>太原工业学院 172054213 宋海禹</p>-->
+        <p><a href="https://gitee.com/HatsuneMona/JavaWeb_Study">源代码（Github）</a>
+          &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+          <a href="https://gitee.com/HatsuneMona/JavaWeb_Study">源代码（Gitee镜像）</a>
+        </p>
         <p><a href="http://www.beian.miit.gov.cn">晋ICP备17007130号-3</a></p>
       </div>
     </td>

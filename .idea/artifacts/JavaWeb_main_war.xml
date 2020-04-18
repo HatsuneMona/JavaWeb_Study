@@ -3,6 +3,9 @@
     <output-path>$PROJECT_DIR$/out/artifacts/JavaWeb_main_war</output-path>
     <root id="archive" name="JavaWeb.main_war.war">
       <element id="artifact" artifact-name="JavaWeb.main:war exploded" />
+      <element id="directory" name="WEB-INF">
+        <element id="artifact" artifact-name="JavaWeb.main:war exploded" />
+      </element>
     </root>
   </artifact>
 </component>

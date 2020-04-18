@@ -4,8 +4,8 @@
 }
 
 .top {
-  height: 80px;
-  background-color: #FF5C42;
+  height: 100px;
+  background-color: #9DC8C8;
   color: #000000;
   text-align: center;
   padding: 5px;
@@ -13,10 +13,10 @@
 
 .left {
   line-height: 30px;
-  background-color: #E83C42;
+  background-color: #519D9E;
   height: 100%;
   min-height: calc(100vh - 81px - 101px - 22px);
-  width: 180px;
+  width: 230px;
   float: left;
   padding: 10px;
 }
@@ -52,11 +52,11 @@
 }
 
 .bottom {
-  background-color: #FF4FAD;
+  background-color: #D1B6E1;
   color: white;
   clear: both;
   text-align: center;
   padding: 5px;
-  height: 100px;
+  height: 80px;
 }
 

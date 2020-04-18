@@ -19,6 +19,7 @@
         </element>
       </element>
       <element id="javaee-facet-resources" facet="JavaWeb.main/web/Web Gradle : JavaWeb-0.1.0.war" />
+      <element id="dir-copy" path="$PROJECT_DIR$/src/main/webapp" />
     </root>
   </artifact>
 </component>
