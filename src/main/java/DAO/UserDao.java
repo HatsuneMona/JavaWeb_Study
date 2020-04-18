@@ -24,7 +24,7 @@ public class UserDao {
       pstmt.setLong(2, Long.parseLong(user.getPhonenum()));
       pstmt.setString(3, user.getSex());
       pstmt.setString(4, user.getRealname());
-      pstmt.setString(5, user.getUserpsw());
+      pstmt.setString(5, MD5.GetMD5(user.getUserpsw()));
       pstmt.setString(6, user.getSchoolname());
       pstmt.setString(7, user.getDept());
       flag = pstmt.executeUpdate();
@@ -62,7 +62,7 @@ public class UserDao {
       pstmt.setString(2, MD5.GetMD5(password));
       resault = pstmt.executeQuery();
       if (resault != null) {
-        System.out.println(username + "Login Success！");
+        System.out.println(username + "  Login Success！");
         while (resault.next()) {
           user.setUsername(resault.getString("username"));
           user.setRealname(resault.getString("realname"));
@@ -72,7 +72,7 @@ public class UserDao {
           user.setPhonenum(resault.getString("phonenum"));
         }
       } else {
-        System.out.println(username + "Login Fail！");
+        System.out.println(username + "  Login Fail！");
         user = null;
       }
     } catch (SQLException throwables) {
