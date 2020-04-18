@@ -119,11 +119,13 @@
       <!--底部-->
       <div class="bottom">
         <p>Copyright &copy; by HatsuneMona All Rights Reserved.</p>
-        <p><a href="https://gitee.com/HatsuneMona/JavaWeb_Study">源代码（Github）</a>
+        <p>
+          <a href="https://gitee.com/HatsuneMona/JavaWeb_Study">源代码（Github）</a>
           &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
           <a href="https://gitee.com/HatsuneMona/JavaWeb_Study">源代码（Gitee镜像）</a>
+          &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+          <a href="http://www.beian.miit.gov.cn">晋ICP备17007130号-3</a>
         </p>
-        <p><a href="http://www.beian.miit.gov.cn">晋ICP备17007130号-3</a></p>
       </div>
     </td>
   </tr>

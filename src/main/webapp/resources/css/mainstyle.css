@@ -15,7 +15,7 @@
   line-height: 30px;
   background-color: #519D9E;
   height: 100%;
-  min-height: calc(100vh - 101px - 101px - 22px);
+  min-height: calc(100vh - 66px - 101px - 22px);
   width: 230px;
   float: left;
   padding: 10px;
@@ -46,7 +46,7 @@
 
 .main_iframe {
   width: calc(100% - 10px);
-  min-height: calc(100vh - 101px - 101px - 22px);
+  min-height: calc(100vh - 66px - 101px - 22px);
   border: 0;
   padding: 5px;
 }
@@ -57,6 +57,6 @@
   clear: both;
   text-align: center;
   padding: 5px;
-  height: 100px;
+  height: 65px;
 }
 
