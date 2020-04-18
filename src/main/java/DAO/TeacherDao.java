@@ -15,27 +15,6 @@ import model.TeachersinfoEntity;
  * @create: 2020-04-10 21:12
  **/
 public class TeacherDao extends DAO {
-
-//  static private Connection connection;//打开数据库连接
-//  static private PreparedStatement pstmt = null;
-//
-//  static private void CloseConnection() {
-//    if (pstmt != null) {
-//      try {
-//        pstmt.close();
-//        pstmt = null;
-//      } catch (SQLException e) {
-//        e.printStackTrace();
-//      }
-//    }
-//    if (connection != null) {
-//      try {
-//        connection.close();
-//      } catch (SQLException e) {
-//        e.printStackTrace();
-//      }
-//    }
-//  }
   
   static public int InsertTeacher(TeachersinfoEntity teacherInfo) {
     connection = SQLConnect.getConnection();

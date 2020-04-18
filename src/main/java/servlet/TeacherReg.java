@@ -35,21 +35,9 @@ public class TeacherReg extends HttpServlet {
   
     int insert = TeacherDao.InsertTeacher(teacher);
     if (insert == 1) {
-      out.println("<h3>添加成功！</h3>");
-      try {
-        TimeUnit.MILLISECONDS.sleep(1000);//毫秒
-      } catch (InterruptedException e) {
-        e.printStackTrace();
-      }
-      response.sendRedirect("/RegPages/teacherReg.jsp?status=OK");
+      response.sendRedirect("/RegPages/teacherReg.jsp?status=OK&tno=" + teacher.getTeacherNo());
     } else {
-      out.println("<h3>添加错误!</h3>");
-      try {
-        TimeUnit.MILLISECONDS.sleep(1000);//毫秒
-      } catch (InterruptedException e) {
-        e.printStackTrace();
-      }
-      response.sendRedirect("/QueryPages/teacherQue.jsp?status=Fail");
+      response.sendRedirect("/RegPages/teacherReg.jsp?status=Fail");
     }
   }
   

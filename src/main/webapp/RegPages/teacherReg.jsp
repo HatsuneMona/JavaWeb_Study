@@ -1,3 +1,4 @@
+<%@ page import="java.util.Objects" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html lang="zh-cn">
 <head>
@@ -24,6 +25,39 @@
 <div class="text-center">
   <h3>教职工注册</h3>
 </div>
+
+<%
+  try {
+    if (Objects.equals(request.getParameter("status"), "OK")) {
+%>
+<div id="OKAlert" name="OKAlert" class="alert alert-warning">
+  <a href="#" class="close" data-dismiss="alert">&times;</a>
+  <strong>成功！</strong>编号为 ${param.tno} 的教师已添加。
+</div>
+<script>
+  $(function () {
+        $("#OKAlert").alert();
+      }
+  );
+</script>
+<%
+} else if (Objects.equals(request.getParameter("status"), "Fail")) {
+%>
+<div id="FailAlert" name="FailAlert" class="alert alert-danger">
+  <a href="#" class="close" data-dismiss="alert">&times;</a>
+  <strong>错误！</strong>添加失败。（请检查系部等信息填写是否正确）
+</div>
+<script>
+  $(function () {
+        $("#FailAlert").alert();
+      }
+  );
+</script>
+<%
+    }
+  } catch (Exception e) {
+  }
+%>
 <div class="regmain container"> <!--后者居中-->
   
   <form action="/TeacherReg" method="post">
