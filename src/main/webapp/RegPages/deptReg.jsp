@@ -71,6 +71,7 @@
       </td>
       <td>
         <div>
+          <h3>现有系部：</h3>
           <form action="./deptReg.jsp" method="post">
             <table class="table table-bordered  table-striped table-hover"
                    style="text-align: center;">
