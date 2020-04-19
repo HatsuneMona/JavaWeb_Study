@@ -12,7 +12,7 @@ import module.MD5;
  * Created by Hatsune Mona on 2020/3/27. 初音萌奈什喵的最可爱了喵！
  */
 public class UserDao {
-
+  
   public static int insertUser(UsersEntity user) {
     Connection connection = SQLConnect.getConnection();//打开数据库连接
     PreparedStatement pstmt = null;
@@ -48,7 +48,7 @@ public class UserDao {
     }
     return flag;
   }
-
+  
   public static UsersEntity UserLogin(String username, String password) {
     Connection connection = SQLConnect.getConnection();//打开数据库连接
     UsersEntity user = new UsersEntity();

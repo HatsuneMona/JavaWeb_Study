@@ -12,7 +12,7 @@ import model.DepartmentsinfoEntity;
 /**
  * Created by Hatsune Mona on 2020/4/11. 初音萌奈什喵的最可爱了喵！
  */
-@WebServlet(name = "添加系部",value = "/DeptReg")
+@WebServlet(name = "添加系部", value = "/DeptReg")
 public class DeptReg extends HttpServlet {
   
   protected void doPost(HttpServletRequest request,

@@ -14,17 +14,17 @@ import org.junit.After;
  * @since <pre>3�� 30, 2020</pre>
  */
 public class SQLConnectTest {
-
+  
   Connection testConnection;
-
+  
   @Before
   public void before() throws Exception {
   }
-
+  
   @After
   public void after() throws Exception {
   }
-
+  
   /**
    * Method: getConnection()
    */
@@ -34,7 +34,7 @@ public class SQLConnectTest {
     testConnection = SQLConnect.getConnection();
     System.out.println();
   }
-
+  
   /**
    * Method: closeConnection(Connection connection)
    */
@@ -43,6 +43,6 @@ public class SQLConnectTest {
 //TODO: Test goes here...
     SQLConnect.closeConnection(testConnection);
   }
-
-
+  
+  
 }

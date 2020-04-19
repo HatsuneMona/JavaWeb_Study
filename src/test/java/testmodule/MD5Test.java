@@ -13,15 +13,15 @@ import org.junit.Test;
  * @since <pre>4�� 3, 2020</pre>
  */
 public class MD5Test {
-
+  
   @Before
   public void before() throws Exception {
   }
-
+  
   @After
   public void after() throws Exception {
   }
-
+  
   /**
    * Method: GetMD5(String string)
    */
@@ -32,8 +32,8 @@ public class MD5Test {
     System.out.println(MD5.GetMD5("testMD5"));
     System.out.println(MD5.GetMD5("12345678"));
   }
-
-
+  
+  
   /**
    * Method: byte2Hex(byte[] bys)
    */
@@ -51,5 +51,5 @@ try {
 } 
 */
   }
-
+  
 } 

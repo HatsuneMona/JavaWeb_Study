@@ -64,7 +64,7 @@ public class DepartmentDao extends DAO {
     return deptlist;
   }
   
-  static public int DeleteDept(int deptNo){
+  static public int DeleteDept(int deptNo) {
     connection = SQLConnect.getConnection();
     int flag = 0;
     String deleteSQL = "DELETE FROM departmentsinfo WHERE departmentNo = ?";

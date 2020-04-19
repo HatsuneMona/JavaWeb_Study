@@ -57,7 +57,6 @@ function checksex() {
   }
 }
 
-
 function checkAll() {
   if (checkTeacherNo() && checkTeacherName() && checkTeacherAge()
       && checkTeacherDept() && checksex()) {

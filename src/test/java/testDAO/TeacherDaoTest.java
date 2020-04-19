@@ -63,9 +63,7 @@ public class TeacherDaoTest {
   }
   
   /**
-   *
    * Method: SearchTeacher()
-   *
    */
   @Test
   public void testSearchTeacher() throws Exception {
