@@ -11,3 +11,6 @@
 由于gitee的镜像仓库需要手动更新，push的频率相比github的仓库会少一些。
 
 在gitee的 [tit2017cs仓库](https://gitee.com/ychs168/tit2017cs) 中我会更新项目 ~~进度~~ 版本号。
+
+项目测试用户名：everyone
+项目测试密码：123456789
