@@ -12,7 +12,6 @@ function checkNumber(idString, DOWN, UP) {
 
 function checkUnicode(idString, DOWN, UP) {
   let realname = $(idString).val();//jQuery语法
-  //以字母开头，字母与数字的组合，3-10字符
   let unameRegExp = eval("/^[\u4e00-\u9fa5]{" + DOWN + "," + UP + "}$/");
   if (unameRegExp.test(realname)) {
     $(idString).css("border-color", "");
