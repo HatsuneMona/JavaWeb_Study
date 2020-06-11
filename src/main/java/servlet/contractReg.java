@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import model.TeachersinfoEntity;
 
 /**
- * Created by Hatsune Mona on 2020/4/11. 初音萌奈什喵的最可爱了喵！
+ * Created by Hatsune Mona on 2020/6/11. 初音萌奈什喵的最可爱了喵！
  */
 @WebServlet(name = "添加合同", value = "/ContractReg")
 public class contractReg extends HttpServlet {

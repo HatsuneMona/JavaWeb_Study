@@ -32,7 +32,7 @@
 %>
 <div id="OKAlert" name="OKAlert" class="alert alert-warning">
   <a href="#" class="close" data-dismiss="alert">&times;</a>
-  <strong>成功！</strong>编号为 ${param.tno} 的教师已添加。
+  <strong>成功！</strong>编号为 ${param.tno} 的合同已添加。
 </div>
 <script>
   $(function () {
@@ -60,60 +60,57 @@
 %>
 <div class="regmain container"> <!--居中-->
   
-  <form action="/TeacherReg" method="post">
+  <form action="/ContractReg" method="post">
     <table class="table table-bordered">
       <tr>
         <td class="bg-primary text-center" style="max-width: 150px;">合同编号</td>
-        <td><input type="text" id="teacherNo" name="teacherNo"
-                   class="form-control" onblur="checkTeacherNo()"
-                   placeholder="请输入教职工编号">
+        <td><input type="text" id="contractid" name="contractid"
+                   class="form-control"
+                   placeholder="请输入合同编号">
         </td>
       </tr>
       <tr>
         <td class="bg-primary text-center">合同类型</td>
-        <td><input type="text" id="teacherName" name="teacherName"
-                   class="form-control" onblur="checkTeacherName()"
-                   placeholder="请输入教师姓名"></td>
+        <td><input type="text" id="contracttype" name="contracttype"
+                   class="form-control"
+                   placeholder="请输入合同类型"></td>
       </tr>
       <tr>
         <td class="bg-primary text-center">领取日期</td>
-        <td><input type="text" onblur="checkTeacherAge()"
-                   id="teacherAge" name="teacherAge"
-                   class="form-control" placeholder="请输入教师工龄"></td>
+        <td><input type="text"
+                   id="getdate" name="getdate"
+                   class="form-control" placeholder="请输入领取日期"></td>
       </tr>
       <tr>
         <td class="bg-primary text-center">领取人</td>
-        <td><input type="text" onblur="checkTeacherDept()"
-                   id="teacherDept" name="teacherDept"
-                   class="form-control" placeholder="请输入系部编号"></td>
+        <td><input type="text"
+                   id="lawer" name="lawer"
+                   class="form-control" placeholder="请输入领取人"></td>
       </tr>
       <tr>
         <td class="bg-primary text-center">经办人</td>
         <td>
-          <label class="radio-inline" for="male">
-            <input class="radio" onblur="checksex()"
-                   type="radio" id="male" name="sex"
-                   value="男">男
-          </label>
-          <label class="radio-inline" for="female">
-            <input class="radio" onblur="checksex()"
-                   type="radio" id="female" name="sex"
-                   value="女">女
-          </label>
+          <input type="text"
+                 id="opreator" name="opreator"
+                 class="form-control" placeholder="请输入经办人"></td>
+        </td>
+      </tr>
+      <tr>
+        <td class="bg-primary text-center">备注</td>
+        <td>
+          <input type="text"
+                 id="remark" name="remark"
+                 class="form-control" placeholder=""></td>
         </td>
       </tr>
       <tr>
         <td colspan="2">
-          <input type="submit" onclick="return checkAll()"
-                 value="注册" class="btn btn-danger btn-block">
+          <input type="submit"
+                 value="添加" class="btn btn-danger btn-block">
         </td>
       </tr>
     </table>
   </form>
 </div>
-<script src="../resources/js/teacherreg.js"></script>
-<script>
-
-</script>
 </body>
 </html>
