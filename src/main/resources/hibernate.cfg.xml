@@ -4,7 +4,7 @@
   "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
   <session-factory>
-    <property name="connection.url">jdbc:mysql://123.56.220.189:3306/javaweb</property>
+    <mapping class="model.ContractEntity"/>
     <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
     <mapping resource="CourseinfoEntity.hbm.xml"/>
     <mapping resource="DepartmentsinfoEntity.hbm.xml"/>
@@ -16,6 +16,7 @@
     <mapping class="model.ElectivelistEntity"/>
     <mapping class="model.StudentsinfoEntity"/>
     <mapping class="model.TeachersinfoEntity"/>
+    <property name="connection.url">jdbc:mysql://123.56.220.189:3306/Exp</property>
     <!-- <property name="connection.username"/> -->
     <!-- <property name="connection.password"/> -->
 

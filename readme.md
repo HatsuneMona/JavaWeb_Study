@@ -6,11 +6,12 @@
 
 仓库及项目连接：
 
-[github仓库地址（主要）](https://github.com/HatsuneMona/JavaWeb_Study)  |  [Gitee仓库地址（镜像）](https://gitee.com/HatsuneMona/JavaWeb_Study)  |  [javaweb项目部署网址（成品）](https://javaweb.moeneko.top)
+[github仓库地址（主要）](https://github.com/HatsuneMona/JavaWeb_Study)  |  [Gitee仓库地址（镜像）](https://gitee.com/HatsuneMona/JavaWeb_Study)  |  [~~javaweb项目部署网址（成品）暂时关闭~~](https://javaweb.moeneko.top)
 
 由于gitee的镜像仓库需要手动更新，push的频率相比github的仓库会少一些。
 
-在gitee的 [tit2017cs仓库](https://gitee.com/ychs168/tit2017cs) 中我会更新项目 ~~进度~~ 版本号。
+在gitee的 [tit2017cs仓库](https://gitee.com/ychs168/tit2017cs) 中我会更新项目 ~~版本号~~ 进度。
 
-项目测试用户名：everyone
-项目测试密码：123456789
+~~项目测试用户名：everyone~~
+
+~~项目测试密码：123456789~~

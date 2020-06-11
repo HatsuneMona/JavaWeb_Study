@@ -21,5 +21,15 @@ F:/Documents/1.Codes/3.JAVA/JavaWeb/src/main/resources/hibernate.cfg.xml</remark
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://123.56.220.189:3306/javaweb</jdbc-url>
     </data-source>
+    <data-source source="LOCAL" name="JavaWebExpDB" uuid="b88f9b08-0587-47b9-bb64-0b2dfe601948">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://123.56.220.189:3306/Exp</jdbc-url>
+      <driver-properties>
+        <property name="serverTimezone" value="GMT+8" />
+      </driver-properties>
+      <code-style-scheme-name>GoogleStyle</code-style-scheme-name>
+    </data-source>
   </component>
 </project>

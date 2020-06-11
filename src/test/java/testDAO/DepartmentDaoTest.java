@@ -11,7 +11,7 @@ import org.junit.After;
  *
  * @author <Authors name>
  * @version 1.0
- * @since <pre>4ÔÂ 18, 2020</pre>
+ * @since <pre>4æœˆ 18, 2020</pre>
  */
 public class DepartmentDaoTest {
   
@@ -21,7 +21,7 @@ public class DepartmentDaoTest {
   @Before
   public void before() throws Exception {
     deptinfo.setDepartmentNo(95);
-    deptinfo.setDepartmentName("DAO²âÊÔÏµ");
+    deptinfo.setDepartmentName("DAOæµ‹è¯•ç³»");
     deptinfo.setDepartmentHead(9500001);
   }
   
@@ -50,7 +50,7 @@ public class DepartmentDaoTest {
    */
   @Test
   public void testSearchDept() throws Exception {
-    System.out.println("Êı¾İ¿âÏÖÓĞÏµ²¿ÊıÁ¿£º");
+    System.out.println("æ•°æ®åº“ç°æœ‰ç³»éƒ¨æ•°é‡ï¼š");
     System.out.println(DepartmentDao.SearchDept(null).size());
   }
   
