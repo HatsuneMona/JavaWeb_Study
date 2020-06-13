@@ -38,7 +38,7 @@ public class ContractDao extends DAO {
   //参数：ContractEntity contractInfo
   //返回：数据库中受影响的行数
   static public int InsertContract(ContractEntity contractInfo) {
-    connection = SQLConnect.getConnection();                        //打开数据库连接
+    connection = getConnection();                        //打开数据库连接
     String insertSQL = "INSERT INTO contract VALUES(?,?,?,?,?,?)";  //定义SQL语句模板
     int flag = 0;                                                   //记录受影响的行数。
     try {
@@ -59,15 +59,15 @@ public class ContractDao extends DAO {
   }
   
   //删除合同领取信息
-  //参数：int contractId 要被删除的id
+  //参数：String contractId 要被删除的id
   //返回：数据库中受影响的行数
-  static public int DeleteContract(int contractId) {
-    connection = SQLConnect.getConnection();
+  static public int DeleteContract(String contractId) {
+    connection = getConnection();
     int flag = 0;
     String deleteSQL = "DELETE FROM contract WHERE contractid = ?";
     try {
       pstmt = connection.prepareStatement(deleteSQL);
-      pstmt.setInt(1, contractId);
+      pstmt.setString(1, contractId);
       flag = pstmt.executeUpdate();
     } catch (SQLException e) {
       e.printStackTrace();
@@ -78,11 +78,11 @@ public class ContractDao extends DAO {
   }
   
   //查询合同领取信息
-  //参数：Integer id  要查询合同信息的ID，若为null，则全查
+  //参数：String id  要查询合同信息的ID，若为null，则全查
   //返回：ArrayList<ContractEntity>  查询到的内容集合
-  static public ArrayList<ContractEntity> SearchContract(Integer id) {
+  static public ArrayList<ContractEntity> SearchContract(String id) {
     ArrayList<ContractEntity> contractList = new ArrayList<>();
-    connection = SQLConnect.getConnection();
+    connection = getConnection();
     String searchSQL;
     try {
       if (id == null) {                                               //如果传入参数的id为null，则全查
@@ -91,7 +91,7 @@ public class ContractDao extends DAO {
       } else {                                                       //如果传入参数的id为具体的值，则创建模板并查询
         searchSQL = "SELECT * FROM contract WHERE contractid = ?";
         pstmt = connection.prepareStatement(searchSQL);
-        pstmt.setInt(1, id);
+        pstmt.setString(1, id);
       }
       ResultSet resultSet = pstmt.executeQuery();
       while (resultSet.next()) {                                      //这个循环一直会循环到最后一条信息

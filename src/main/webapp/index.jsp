@@ -106,6 +106,18 @@
               社保计算
             </button>
           </li>
+          <li>
+            <button type="button" class="btn btn-primary"
+                    onclick="javascript:document.getElementById('main_iframe').src='./QueryPages/contractQue.jsp'">
+              律师合同查询
+            </button>
+          </li>
+          <li>
+            <button type="button" class="btn btn-primary"
+                    onclick="javascript:document.getElementById('main_iframe').src='./RegPages/contractReg.jsp'">
+              律师合同添加
+            </button>
+          </li>
         </ul>
       </div>
     </td>

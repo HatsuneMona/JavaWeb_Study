@@ -39,7 +39,7 @@
   }
 %>
 <div class="regmain container">
-  <form action="./teacherQue.jsp" method="get">
+  <form action="./contractQue.jsp" method="get">
     <table class="table table-bordered">
       <tr>
         <td class="bg-primary text-center" style="max-width: 150px;">合同编号：</td>
@@ -72,13 +72,13 @@
         <td class="bg-primary text-center" style="max-width: 30px;">选择</td>
       </tr>
       <%
-        Integer id = null;
+        String id = null;
         try {
           if (request.getParameter("contractid") != null) {
-            id = Integer.parseInt(request.getParameter("contractid"));
+            id = request.getParameter("contractid");
           }
         } catch (Exception e) {
-        
+    
         }
         ArrayList<ContractEntity> clist = ContractDao.SearchContract(id);
         if (clist.size() != 0) {
@@ -103,7 +103,7 @@
         <td>
           <%=i.getRemark()%><!--备注-->
         </td>
-        <td><label><input type="radio" name="choosetno" id="choosetno"
+        <td><label><input type="radio" name="chooseid" id="chooseid"
                           value="<%=i.getContractid()%>"/></label></td>
         <!--选择框-->
       </tr>
@@ -145,20 +145,20 @@
         </td>
       </tr>
     </table>
-  
+
   </form>
 </div>
 
 <script>
   function deleteSubmit() {
-    queform.action = "/TeacherDel";
+    queform.action = "/contractDel";
     queform.submit();
   }
 
-  function modifySubmit() {
-    queform.action = "/ModifyPages/teacherModify.jsp";
-    queform.submit();
-  }
+  // function modifySubmit() {
+  //   queform.action = "/ModifyPages/contractModify.jsp";
+  //   queform.submit();
+  // }
 </script>
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
