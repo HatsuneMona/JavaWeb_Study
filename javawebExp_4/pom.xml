@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://maven.apache.org/POM/4.0.0"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <artifactId>javawebExp_4</artifactId>
+
+  <dependencies>
+    <dependency>
+      <artifactId>junit</artifactId>
+      <groupId>junit</groupId>
+      <scope>test</scope>
+      <version>4.11</version>
+    </dependency>
+
+    <dependency>
+      <artifactId>javax.servlet-api</artifactId>
+      <groupId>javax.servlet</groupId>
+      <version>4.0.0-b07</version>
+    </dependency>
+
+    <dependency>
+      <artifactId>mybatis</artifactId>
+      <groupId>org.mybatis</groupId>
+      <version>3.5.2</version>
+    </dependency>
+
+    <dependency>
+      <artifactId>mysql-connector-java</artifactId>
+      <groupId>mysql</groupId>
+      <version>8.0.17</version>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
+    <dependency>
+      <artifactId>hibernate-core</artifactId>
+      <groupId>org.hibernate</groupId>
+      <version>5.4.10.Final</version>
+    </dependency>
+
+
+  </dependencies>
+  <groupId>top.moeneko\</groupId>
+  <modelVersion>4.0.0</modelVersion>
+
+  <version>1.0</version>
+
+
+</project>
